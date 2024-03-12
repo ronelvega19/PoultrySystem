@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SMSVerification">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:id="@+id/img5"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMS Verification"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/img5"
+        android:id="@+id/smsText"
+        android:layout_marginTop="40dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        />
+    
+    <TextView
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="You'll recieved a 4 digit code on this number"
+        android:id="@+id/recievedTXT"
+        android:layout_below="@+id/smsText"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/number63"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recievedTXT"
+        android:layout_marginTop="17dp"
+        android:layout_marginRight="7dp"
+        android:layout_toLeftOf="@+id/numberInput"
+        android:background="@drawable/border"
+        android:padding="12dp"
+        android:text="+63"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/numberInput"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recievedTXT"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="73dp"
+        android:background="@drawable/border"
+        android:padding="12dp"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="Send OTP"
+        android:id="@+id/otpBTN"
+        android:layout_below="@id/numberInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+
+        />
+
+</RelativeLayout>

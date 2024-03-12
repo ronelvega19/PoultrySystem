@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PoultryApp</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="contrary_to_popular_belief_lorem_ipsum_is_not_simply_random_text_it_has_roots_in_a_piece_of_classical_latin_literature_from_45_bc_making_it_over_2000_years_old_richard_mcclintock_a_latin_professor_at_hampden_sydney_college_in_virginia_looked_up_one_of_the_more_obscure_latin_words_consectetur_from_a_lorem_ipsum_passage_and_going_through_the_cites_of_the_word_in_classical_literature_discovered_the_undoubtable_source_lorem_ipsum_comes_from_sections_1_10_32_and_1_10_33_of">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of</string>
+</resources>

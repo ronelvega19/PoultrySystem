@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "403218148502",
+    "firebase_url": "https://poultry-management-syste-a2d22-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "poultry-management-syste-a2d22",
+    "storage_bucket": "poultry-management-syste-a2d22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403218148502:android:627542617f82a377d766b7",
+        "android_client_info": {
+          "package_name": "com.example.poultryapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCp5AGEyTUFtw3qZi1xznTzuddCqy3bM6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

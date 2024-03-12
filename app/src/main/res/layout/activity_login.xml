@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login">
+
+
+
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/henbg" />
+
+    <ImageView
+        android:id="@+id/hen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_below="@+id/hen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Hello"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:layout_marginTop="35dp"
+        />
+
+    <TextView
+        android:id="@+id/tex2"
+        android:layout_width="370dp"
+        android:layout_height="62dp"
+        android:layout_below="@+id/text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Welcome to your friendly companion for poultry management"
+        android:textSize="18dp"
+        />
+
+    <Button
+        android:id="@+id/loginBTN"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:layout_below="@+id/tex2"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/signupBTN"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:layout_below="@+id/loginBTN"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        />
+
+
+</RelativeLayout>
