@@ -43,6 +43,7 @@
 
 
     <!--      HUMIDITY  -->
+
     <RelativeLayout
         android:id="@+id/humidityPanel"
         android:layout_marginLeft="50dp"

@@ -6,22 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Terms_and_Conditions">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-
-
-        />
-
-
-    <RelativeLayout
-        android:layout_width="450dp"
-        android:layout_height="140dp"
-
-        />
-
-
 
     <ImageView
         android:id="@+id/topgreen"
@@ -45,21 +29,31 @@
         />
 
 
-    <TextView
-        android:id="@+id/lorem"
-        android:layout_width="380dp"
-        android:layout_height="450dp"
-        android:text="lorem_ipsum_is_not_simply_random_text_it_has_roots_in_a_piece_of_classical_latin_literature_from_45_bc_making_it_over_2000_years_old_richard_mcclintock_a_latin_professor_at_hampden_sydney_college_in_virginia_looked_up_one_of_the_more_obscure_latin_words_consectetur_from_a_lorem_ipsum_passage_and_going_through_the_cites_of_the_word_in_classical_literature_discovered_the_undoubtable_source_lorem_ipsum_comes_from_sections_1_10_32_and_1_10_33_ofde Finibus Bonorum et Malorum(The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
-        android:layout_below="@+id/topgreen"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
+    <ScrollView
+        android:id="@+id/termsScroll"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true">
 
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:scrollbars="vertical"
-        android:textSize="19sp"
-        android:justificationMode="inter_word"
-    />
+        <TextView
+            android:id="@+id/lorem"
+            android:layout_width="380dp"
+            android:layout_height="450dp"
+            android:layout_below="@+id/topgreen"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:justificationMode="inter_word"
+
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:scrollbars="vertical"
+            android:text="lorem_ipsum_is_not_simply_random_text_it_has_roots_in_a_piece_of_classical_latin_literature_from_45_bc_making_it_over_2000_years_old_richard_mcclintock_a_latin_professor_at_hampden_sydney_college_in_virginia_looked_up_one_of_the_more_obscure_latin_words_consectetur_from_a_lorem_ipsum_passage_and_going_through_the_cites_of_the_word_in_classical_literature_discovered_the_undoubtable_source_lorem_ipsum_comes_from_sections_1_10_32_and_1_10_33_ofde Finibus Bonorum et Malorum(The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+            android:textSize="19sp" />
+
+    </ScrollView>
+
+
+
 
 
 
@@ -89,9 +83,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="I agree to this terms and conditions."
-        android:layout_below="@+id/lorem"
+        android:layout_below="@+id/termsScroll"
         android:id="@+id/agreeCB"
         android:textSize="18sp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         />
 

@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btnLogin = findViewById(R.id.startBTN);
-        Button shortcut = findViewById(R.id.shortcut);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,12 +24,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        shortcut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Terms_and_Conditions.class));
-            }
-        });
+
 
 
 
