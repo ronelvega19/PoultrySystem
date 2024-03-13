@@ -51,8 +51,7 @@ public class SMSVerification extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         String numF = "+63";
-                        String num = numF+ otpInput.getText().toString();
-                        Toast.makeText(SMSVerification.this, num, Toast.LENGTH_SHORT).show();
+                        String num = numF+otpInput.getText().toString();
 
                         sendOtp(num);
                     }
