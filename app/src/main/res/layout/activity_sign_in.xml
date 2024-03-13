@@ -32,7 +32,7 @@
     <EditText
         android:layout_width="370dp"
         android:layout_marginTop="40dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/signTXT"
         android:hint="Username"
         android:id="@+id/usernameTXT"
@@ -42,7 +42,7 @@
         />
     <EditText
         android:layout_width="370dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:hint="Password"
         android:layout_below="@+id/usernameTXT"
         android:inputType="textPassword"

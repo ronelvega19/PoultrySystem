@@ -20,7 +20,14 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
+import android.util.Patterns;
+
 public class SMSVerification extends AppCompatActivity {
+
+    private boolean isValidPhoneNumber(String phoneNumber) {
+        return Patterns.PHONE.matcher(phoneNumber).matches();
+    }
+
 
     String phoneNumber;
     Long timeoutSeconds = 60L;
@@ -43,62 +50,76 @@ public class SMSVerification extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String num = otpInput.getText().toString();
+                        String numF = "+63";
+                        String num = numF+ otpInput.getText().toString();
                         Toast.makeText(SMSVerification.this, num, Toast.LENGTH_SHORT).show();
-                        sendOtp(num,false);
+
+                        sendOtp(num);
                     }
                 }
         );
 
 
     }
-
-    void sendOtp(String phoneNumber,boolean isResend){
-
-        //setInProgress(true);
-        PhoneAuthOptions.Builder builder =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(phoneNumber)
-                        .setTimeout(10L, TimeUnit.SECONDS)
-                        .setActivity(this)
-                        .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    public void sendOtp(String number){
+        PhoneAuthOptions options = PhoneAuthOptions.newBuilder(firebaseAuth)
+                .setPhoneNumber(number).
+                setTimeout(60L,TimeUnit.SECONDS)
+                .setActivity(this)
+                .setCallbacks(
+                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                             @Override
-                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-//                                signIn(phoneAuthCredential);
-                              //  setInProgress(false);
-                                Toast.makeText(SMSVerification.this, "Success", Toast.LENGTH_SHORT).show();
+
+                public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                Toast.makeText(SMSVerification.this, "OTP SENT", Toast.LENGTH_SHORT).show();
+
                             }
 
                             @Override
                             public void onVerificationFailed(@NonNull FirebaseException e) {
-//                                AndroidUtil.showToast(getApplicationContext(),"OTP verification failed");
-                                //setInProgress(false);
-                                Toast.makeText(SMSVerification.this, "Failed", Toast.LENGTH_SHORT).show();
-
+                                Toast.makeText(SMSVerification.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+                                Log.d("OTPERROR",e.getMessage().toString());
                             }
 
                             @Override
                             public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 super.onCodeSent(s, forceResendingToken);
-                                verificationCode = s;
-                                resendingToken = forceResendingToken;
-//                                AndroidUtil.showToast(getApplicationContext(),"OTP sent successfully");
-                                //setInProgress(false);
-                                Toast.makeText(SMSVerification.this, "Success Sent", Toast.LENGTH_SHORT).show();
+
+
+
+
 
                             }
-                        });
-        PhoneAuthProvider.verifyPhoneNumber(builder.build());
-//        if(isResend){
-//            PhoneAuthProvider.verifyPhoneNumber(builder.setForceResendingToken(resendingToken).build());
-//        }else{
-//
-//        }
+
+
+
+
+
+                        }
+                ).build();
+
+        PhoneAuthProvider.verifyPhoneNumber(options);
+
+
+
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String num = otpInput.getText().toString().trim();
+                if (isValidPhoneNumber(num)) {
+                    sendOtp(num);
+                } else {
+                    Toast.makeText(SMSVerification.this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
 
     }
-    void setInProgress(boolean inProgress){
 
-    }
+
 
 
 }
