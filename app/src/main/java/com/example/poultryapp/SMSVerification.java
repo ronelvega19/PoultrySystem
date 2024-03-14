@@ -3,7 +3,9 @@ package com.example.poultryapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -22,23 +24,19 @@ import java.util.concurrent.TimeUnit;
 
 import android.util.Patterns;
 
-public class SMSVerification extends AppCompatActivity {
+public class    SMSVerification extends AppCompatActivity {
 
     private boolean isValidPhoneNumber(String phoneNumber) {
         return Patterns.PHONE.matcher(phoneNumber).matches();
     }
 
 
-    String phoneNumber;
-    Long timeoutSeconds = 60L;
-    String verificationCode;
-    PhoneAuthProvider.ForceResendingToken  resendingToken;
 
     EditText otpInput;
     Button nextBtn;
 
-    FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    PhoneAuthProvider.ForceResendingToken frt;
+    String num="+63";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +48,8 @@ public class SMSVerification extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String numF = "+63";
-                        String num = numF+otpInput.getText().toString();
+
+                         num = "+63"+otpInput.getText().toString();
 
                         sendOtp(num);
                     }
@@ -71,7 +69,6 @@ public class SMSVerification extends AppCompatActivity {
                             @Override
 
                 public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                                Toast.makeText(SMSVerification.this, "OTP SENT", Toast.LENGTH_SHORT).show();
 
                             }
 
@@ -84,9 +81,10 @@ public class SMSVerification extends AppCompatActivity {
                             @Override
                             public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 super.onCodeSent(s, forceResendingToken);
+                                Log.d("SUCCESSOTP",s);
+                                Toast.makeText(SMSVerification.this, "OTP SENT SUCCESSFULLY", Toast.LENGTH_SHORT).show();
 
-
-
+                                signIn(number,s);
 
 
                             }
@@ -102,23 +100,26 @@ public class SMSVerification extends AppCompatActivity {
 
 
 
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String num = otpInput.getText().toString().trim();
-                if (isValidPhoneNumber(num)) {
-                    sendOtp(num);
-                } else {
-                    Toast.makeText(SMSVerification.this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
 
     }
 
 
+public void signIn(String nums, String ID){
 
+  Intent intent = new Intent(SMSVerification.this,confirm_sms.class);
+  intent.putExtra("number",nums);
+  intent.putExtra("token",ID);
+    SharedPreferences sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE);
+    SharedPreferences.Editor editor = sharedPref.edit();
+
+
+
+    editor.putString("number",nums);
+    editor.apply();
+    intent.putExtra("username",getIntent().getStringExtra("username"));
+    intent.putExtra("password",getIntent().getStringExtra("password"));
+
+  startActivity(intent);
+}
 
 }

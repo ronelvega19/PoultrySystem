@@ -3,8 +3,12 @@ package com.example.poultryapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,13 +19,35 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
+import android.os.Bundle;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+
+import android.os.Bundle;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class dashboard extends AppCompatActivity {
-    TextView percent,air,humid;
+
+    TextView percent,air,humid,dates,times;
     DatabaseReference temp;
     Switch lights, waters,feeds,fans;
     // Initialize Firebase
     DatabaseReference statusRef;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+    private Handler handler;
+    private Runnable updateTimeTask;
+    ImageView burger;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +60,62 @@ public class dashboard extends AppCompatActivity {
         waters = findViewById(R.id.PumpSwitch);
         feeds = findViewById(R.id.FeedingSwitch);
         fans = findViewById(R.id.fanSwitch);
+        dates = findViewById(R.id.dateTV);
+        times = findViewById(R.id.timeTV);
+        burger = findViewById(R.id.burgerImage);
+
         statActivation();
         displayVal();
+        time();
 
+        burger.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(dashboard.this, ProfileSettings.class);
+                        intent.putExtra("username",getIntent().getStringExtra("username"));
+                        intent.putExtra("password",getIntent().getStringExtra("password"));
+                        intent.putExtra("number",getIntent().getStringExtra("number"));
+                        startActivity(intent);
+                    }
+                }
+        );
     }
+DatabaseReference CurrentTime;
+    private void time(){
+        handler = new Handler();
+        updateTimeTask = new Runnable() {
+            @Override
+            public void run() {
+                // Get current date and time
+                Calendar calendar = Calendar.getInstance();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, MMM d, yyyy", Locale.getDefault());
+                String currentDateTime = dateFormat.format(calendar.getTime());
+                SimpleDateFormat dateFormat2 = new SimpleDateFormat("hh:mm:ss a", Locale.getDefault());
+                String currentDateTime2 = dateFormat2.format(calendar.getTime());
+                SimpleDateFormat dateFormat3 = new SimpleDateFormat("hh:mm:ss", Locale.getDefault());
+                String currentDateTime3 = dateFormat3.format(calendar.getTime());
+
+                SimpleDateFormat dateFormat4 = new SimpleDateFormat("MMM d, yyyy", Locale.getDefault());
+                String currentDateTime4 = dateFormat4.format(calendar.getTime());
+
+                // Set text to TextView
+               dates.setText(currentDateTime.toUpperCase());
+               times.setText(currentDateTime2.toUpperCase());
+                CurrentTime = FirebaseDatabase.getInstance().getReference().child("Time");
+                CurrentTime.child("CurrentTime").setValue(currentDateTime3);
+                CurrentTime.child("CurrentDate").setValue(currentDateTime4);
+
+                // Call this runnable again after a delay (e.g., every second)
+                handler.postDelayed(this, 1000); // 1000 milliseconds = 1 second
+            }
+        };
+        handler.post(updateTimeTask);
+    }
+
+
+
+
     private void statActivation(){
         statusRef = database.getReference("Status");
         lights.setOnCheckedChangeListener(

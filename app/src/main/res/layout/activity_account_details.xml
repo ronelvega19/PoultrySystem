@@ -58,7 +58,7 @@
         android:id="@+id/emailTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="Username"
         android:layout_below="@+id/accountDetailsProfile"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="40dp"
@@ -69,6 +69,7 @@
     <EditText
         android:id="@+id/emailTXT"
         android:layout_width="330dp"
+        android:editable="false"
         android:layout_height="45dp"
         android:layout_below="@+id/emailTV"
         android:layout_centerHorizontal="true"
@@ -137,6 +138,7 @@
         android:layout_marginLeft="40dp"
         android:textSize="18sp"
 
+
         />
 
     <EditText
@@ -146,6 +148,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/border"
         android:layout_marginTop="5dp"
+        android:inputType="textPassword"
         android:id="@+id/passwordTXT"
         />
 

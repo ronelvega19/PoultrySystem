@@ -4,42 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/green_background"
+
     android:scrollbars="vertical"
     tools:context=".dashboard">
 
 
-   <ImageView
-       android:id="@+id/burgerImage"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:background="@drawable/burger"
-       android:layout_marginLeft="30dp"
-       android:layout_marginTop="30dp"
-       />
-    <TextView
-        android:id="@+id/dateTV"
-        android:layout_below="@+id/burgerImage"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-        android:text="03/06/24"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        />
-    <TextView
-        android:id="@+id/timeTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="11:40 PM"
-        android:layout_below="@+id/dateTV"
-        android:layout_centerHorizontal="true"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
 
-        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:id="@+id/dateTime"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/green_background"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/burgerImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/burger"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+
+            />
+
+        <TextView
+            android:id="@+id/dateTV"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="03/06/24"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/timeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11:40 PM"
+            android:layout_below="@+id/dateTV"
+            android:layout_centerHorizontal="true"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+
+            />
+
+
+
+    </RelativeLayout>
+
+
+
 
 
     <!--      HUMIDITY  -->
@@ -47,11 +69,12 @@
     <RelativeLayout
         android:id="@+id/humidityPanel"
         android:layout_marginLeft="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:background="@drawable/backgrounddash"
-        android:layout_below="@+id/timeTV"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/dateTime"
+        android:layout_marginTop="10dp"
+
         >
 
         <TextView
@@ -102,11 +125,11 @@
     <!--      TEMPERATURE  -->
     <RelativeLayout
         android:id="@+id/TempPanel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:background="@drawable/backgrounddash"
-        android:layout_below="@+id/timeTV"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/dateTime"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/humidityPanel"
         >
@@ -158,11 +181,11 @@
     <!--      AIR QUALITY  -->
     <RelativeLayout
         android:id="@+id/airPanel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:background="@drawable/backgrounddash"
         android:layout_below="@+id/humidityPanel"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
         >
 
@@ -213,13 +236,13 @@
 
     <!--      FAN QUALITY  -->
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:background="@drawable/backgrounddash"
         android:layout_toRightOf="@+id/airPanel"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/TempPanel"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         >
 
         <TextView
@@ -251,6 +274,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
             android:text="OFF"
+            android:theme="@style/SCBSwitch"
             android:textSize="25sp"
             android:layout_centerHorizontal="true"
             />
@@ -270,11 +294,11 @@
     <!--      AIR LIGHT  -->
     <RelativeLayout
         android:id="@+id/LightPanel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:background="@drawable/backgrounddash"
         android:layout_below="@+id/airPanel"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
         >
 
@@ -308,8 +332,10 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
             android:text="OFF"
+            android:theme="@style/SCBSwitch"
             android:textSize="25sp"
             android:layout_centerHorizontal="true"
+
             />
 
         <ImageView
@@ -328,12 +354,12 @@
     <!--      FEEDING   -->
     <RelativeLayout
         android:id="@+id/PumpPanel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:background="@drawable/backgrounddash"
         android:layout_below="@+id/airPanel"
         android:layout_toRightOf="@+id/LightPanel"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         >
 
@@ -367,6 +393,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
             android:text="OFF"
+            android:theme="@style/SCBSwitch"
             android:textSize="25sp"
             android:layout_centerHorizontal="true"
             />
@@ -386,34 +413,32 @@
     <!--      AIR LIGHT  -->
     <RelativeLayout
         android:id="@+id/FeedingPanel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/backgrounddash"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_below="@+id/LightPanel"
-        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="50dp"
-        >
+        android:layout_marginTop="17dp"
+        android:background="@drawable/backgrounddash">
 
         <TextView
             android:id="@+id/percentFeeding"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="Light"
-            android:textStyle="bold"
-            android:textSize="25sp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            />
+            android:text="Light"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/highlowFeeding"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:layout_marginLeft="10dp"
             android:layout_below="@+id/percentFeeding"
-            />
+            android:layout_marginLeft="10dp"
+            android:textSize="25sp" />
 
 
         <Switch
@@ -421,19 +446,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/percentFeeding"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
             android:text="OFF"
-            android:textSize="25sp"
-            android:layout_centerHorizontal="true"
-            />
+            android:theme="@style/SCBSwitch"
+            android:textSize="25sp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
-            android:layout_toRightOf="@+id/highlowFeeding"
             android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/highlowFeeding"
             android:background="@drawable/bulb" />
 
     </RelativeLayout>
