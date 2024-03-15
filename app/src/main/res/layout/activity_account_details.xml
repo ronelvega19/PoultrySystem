@@ -14,6 +14,7 @@
         android:background="@drawable/back3"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="40dp"
+        android:padding="10dp"
         />
 
     <ImageView
@@ -69,12 +70,14 @@
     <EditText
         android:id="@+id/emailTXT"
         android:layout_width="330dp"
-        android:editable="false"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/emailTV"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
         android:layout_marginTop="5dp"
+        android:background="@drawable/border"
+        android:editable="false"
+        android:padding="10dp"
+        android:text="f"
 
         />
 
@@ -93,14 +96,16 @@
         />
 
     <EditText
+        android:id="@+id/firstNameTXT"
         android:layout_width="330dp"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/firstNameTV"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
         android:layout_marginTop="5dp"
-        android:id="@+id/firstNameTXT"
-        />
+        android:background="@drawable/border"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:text="First Name" />
 
 <!--   Last Name  -->
 
@@ -114,17 +119,22 @@
         android:layout_marginLeft="40dp"
         android:textSize="18sp"
 
+        android:padding="10dp"
+
         />
 
     <EditText
+        android:id="@+id/lastNameTXT"
         android:layout_width="330dp"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/lastNameTV"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
         android:layout_marginTop="5dp"
-        android:id="@+id/lastNameTXT"
-        />
+        android:background="@drawable/border"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:text="f"
+        android:textSize="20sp" />
 
 <!--    PASSWORD  -->
 
@@ -139,18 +149,21 @@
         android:textSize="18sp"
 
 
+
+
         />
 
     <EditText
+        android:id="@+id/passwordTXT"
         android:layout_width="330dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/passwordTV"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
         android:layout_marginTop="5dp"
+        android:background="@drawable/border"
         android:inputType="textPassword"
-        android:id="@+id/passwordTXT"
-        />
+        android:padding="10dp"
+        android:text="p" />
 
     <Button
         android:id="@+id/doneBTN"
@@ -160,7 +173,9 @@
         android:layout_below="@+id/passwordTXT"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="#00703d"
+
+
+
         />
 
 

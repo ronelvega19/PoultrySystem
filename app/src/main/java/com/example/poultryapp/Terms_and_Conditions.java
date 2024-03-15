@@ -28,7 +28,7 @@ public class Terms_and_Conditions extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         agree.setChecked(true);
-                        Intent intent = new Intent(Terms_and_Conditions.this,SMSVerification.class);
+                        Intent intent = new Intent(Terms_and_Conditions.this,EmailVerification.class);
                         intent.putExtra("username",user);
                         intent.putExtra("password",pass);
                         startActivity(intent);

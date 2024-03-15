@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,14 +39,38 @@ public class AccountDetails extends AppCompatActivity {
     DatabaseReference user;
     String id;
     boolean isMatch=false;
+    DatabaseReference rd;
+    FirebaseAuth userData;
     private void display(){
         email.setEnabled(false);
         pass.setEnabled(false);
-        SharedPreferences datas = getSharedPreferences("myPref", Context.MODE_PRIVATE);
-        fname.setText(datas.getString("fName",""));
-        lname.setText(datas.getString("lName",""));
-        email.setText(datas.getString("username",""));
-        pass.setText(datas.getString("password",""));
+
+        userData = FirebaseAuth.getInstance();
+        rd = FirebaseDatabase.getInstance().getReference().child("Users");
+        String emails = String.valueOf(userData.getCurrentUser().getEmail());
+
+        rd.addValueEventListener(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for(DataSnapshot snap : snapshot.getChildren()){
+                            if(String.valueOf(snap.child("email").getValue()).equals(emails)){
+                                fname.setText(String.valueOf(snap.child("first_name").getValue()));
+                                lname.setText(String.valueOf(snap.child("last_name").getValue()));
+                                email.setText(String.valueOf(snap.child("email").getValue()));
+                                pass.setText(String.valueOf(snap.child("password").getValue()));
+
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                }
+        );
+
 
         done.setOnClickListener(
                 new View.OnClickListener() {

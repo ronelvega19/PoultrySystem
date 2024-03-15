@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmailVerification">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:id="@+id/img5"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Verification"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/img5"
+        android:id="@+id/smsText"
+        android:layout_marginTop="40dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="You'll recieved a Email Verfication"
+        android:id="@+id/recievedTXT"
+        android:layout_below="@+id/smsText"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <Button
+        android:id="@+id/otpemailBTN"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/recievedTXT"
+        android:layout_marginTop="19dp"
+        android:backgroundTint="#00703d"
+        android:text="Send OTP"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+
+        />
+
+
+</RelativeLayout>

@@ -15,6 +15,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,8 +30,10 @@ public class SignIn extends AppCompatActivity {
 
         TextView user, pass;
         Button check;
+    FirebaseAuth users;
         DatabaseReference logins;
         boolean isMatch=false;
+        FirebaseAuth mAuth;
     Intent intent;
     SharedPreferences sharedPreferences;
     @Override
@@ -47,56 +54,27 @@ public class SignIn extends AppCompatActivity {
                         if(TextUtils.isEmpty(username) && TextUtils.isEmpty(password)){
                             Toast.makeText(SignIn.this, "Please fill the forms", Toast.LENGTH_SHORT).show();
                         }else{
+                            mAuth = FirebaseAuth.getInstance();
 
-                            logins.addValueEventListener(
-                                    new ValueEventListener() {
+                            mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(
+                                    new OnCompleteListener<AuthResult>() {
                                         @Override
-                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                            if(task.isSuccessful()){
+                                                if(mAuth.getCurrentUser().isEmailVerified()){
+                                                    intent = new Intent(SignIn.this, dashboard.class);
 
-                                            for(DataSnapshot snap: snapshot.getChildren()){
+                                                    startActivity(intent);
 
-                                                String Fuser = String.valueOf(snap.child("email").getValue());
-                                                String Fpass = String.valueOf(snap.child("password").getValue());
-                                                String Fnum = String.valueOf(snap.child("number").getValue());
-                                                String Fname = String.valueOf(snap.child("first_name").getValue());
-                                                String Lname = String.valueOf(snap.child("last_name").getValue());
-
-                                                if((Fuser.equals(username) && Fpass.equals(password)) || (Fnum.equals(username) && Fpass.equals(password))){
-                                                    isMatch=true;
-                                                    intent = new Intent(SignIn.this,  dashboard.class);
-                                                    intent.putExtra("username",Fuser);
-                                                    intent.putExtra("password",Fpass);
-                                                    intent.putExtra("number",Fnum);
-                                                    SharedPreferences sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE);
-                                                    SharedPreferences.Editor editor = sharedPref.edit();
-                                                    editor.putString("username",Fuser);
-                                                    editor.putString("password",Fpass);
-                                                    editor.putString("number",Fnum);
-                                                    editor.putString("fName",Fname);
-                                                    editor.putString("lName",Lname);
-                                                    editor.apply();
-                                                    break;
                                                 }
-                                            }
-                                            if(isMatch){
 
-
-                                                startActivity(intent);
-                                                isMatch=false;
                                             }else{
-                                                user.setTextColor(Color.RED);
-                                                pass.setTextColor(Color.RED);
                                                 Toast.makeText(SignIn.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
-
                                             }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError error) {
-
                                         }
                                     }
                             );
+
                         }
                     }
                 }

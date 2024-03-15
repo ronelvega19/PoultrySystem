@@ -1,5 +1,6 @@
 package com.example.poultryapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -10,10 +11,17 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class ProfileSettings extends AppCompatActivity {
 
         TextView name,emailProfile;
-        RelativeLayout accountDetailsGROUP,signout;
+        RelativeLayout accountDetailsGROUP,signout,cpass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +30,18 @@ public class ProfileSettings extends AppCompatActivity {
         emailProfile = findViewById(R.id.emailProfile);
         accountDetailsGROUP = findViewById(R.id.accountDetailsGROUP);
         signout = findViewById(R.id.signoutGroup);
+        cpass = findViewById(R.id.changepassGroup);
         displayDATA();
         settings();
-
+        cpass.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(ProfileSettings.this, changepassword.class
+                        ));
+                    }
+                }
+        );
         signout.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -49,10 +66,31 @@ public class ProfileSettings extends AppCompatActivity {
                 }
         );
     }
+    FirebaseAuth userData;
+    DatabaseReference rd;
     public void displayDATA(){
-        SharedPreferences datas = getSharedPreferences("myPref", Context.MODE_PRIVATE);
+       userData = FirebaseAuth.getInstance();
+       rd = FirebaseDatabase.getInstance().getReference().child("Users");
+       String email = String.valueOf(userData.getCurrentUser().getEmail());
+        rd.addValueEventListener(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for(DataSnapshot snap : snapshot.getChildren()){
+                            if(String.valueOf(snap.child("email").getValue()).equals(email)){
+                                name.setText(String.valueOf(snap.child("first_name").getValue())+" "+String.valueOf(snap.child("last_name").getValue()));
+                                emailProfile.setText(String.valueOf(snap.child("email").getValue()));
+                            }
+                        }
+                    }
 
-        name.setText(datas.getString("fName","")+" "+datas.getString("lName",""));
-        emailProfile.setText(datas.getString("username",""));
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                }
+        );
+
+
     }
 }
