@@ -6,7 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ProfileSettings">
 
-
+    <TextView
+        android:id="@+id/back2BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textColor="#00703D"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"/>
 
     <ImageView
         android:id="@+id/imgProfile"
@@ -47,6 +55,7 @@
         android:layout_below="@+id/emailProfile"
         android:layout_marginLeft="20dp"
         android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_marginTop="20dp"
         />
 
@@ -269,15 +278,6 @@
             android:textSize="18sp"
             android:textColor="#d40000"
             />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="165dp"
-            android:layout_marginTop="25dp"
-            android:layout_toRightOf="@+id/signoutTV"
-            android:background="@drawable/backimg2" />
-
 
     </RelativeLayout>
 

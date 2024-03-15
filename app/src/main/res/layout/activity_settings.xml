@@ -427,7 +427,7 @@ good health of the broilers."
         app:layout_constraintStart_toEndOf="@+id/editText3z1s"
         app:layout_constraintTop_toTopOf="@+id/editText3z1s" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/saveChanges"
         android:layout_width="330dp"
         android:layout_height="50dp"
@@ -435,7 +435,10 @@ good health of the broilers."
         android:backgroundTint="#00703d"
         android:text="SAVE CHANGES"
         android:textStyle="bold"
-        android:visibility="visible"
+        android:textSize="20dp"
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonbg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

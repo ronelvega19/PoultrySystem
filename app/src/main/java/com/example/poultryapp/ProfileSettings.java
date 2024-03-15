@@ -22,9 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileSettings extends AppCompatActivity {
 
-        TextView name,emailProfile, sett;
+        TextView name,emailProfile, sett, back;
         RelativeLayout accountDetailsGROUP,signout,cpass,notificationGroup, gos;
-        ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/changeTXT"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="50dp"
         android:text="Email"
 
         android:textSize="18sp" />
@@ -131,18 +131,17 @@
         android:padding="10dp"
         android:text="Password" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/doneBTN"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
         android:text="SAVE"
         android:layout_below="@+id/passwordTXT"
         android:layout_marginTop="35dp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
-
-
-
+        android:textColor="@color/white"
+        android:background="@drawable/buttonbg"
         />
 
 
