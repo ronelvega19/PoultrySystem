@@ -101,7 +101,7 @@ DatabaseReference CurrentTime;
                 String currentDateTime = dateFormat.format(calendar.getTime());
                 SimpleDateFormat dateFormat2 = new SimpleDateFormat("hh:mm:ss a", Locale.getDefault());
                 String currentDateTime2 = dateFormat2.format(calendar.getTime());
-                SimpleDateFormat dateFormat3 = new SimpleDateFormat("hh:mm", Locale.getDefault());
+                SimpleDateFormat dateFormat3 = new SimpleDateFormat("hh:mm:ss", Locale.getDefault());
                 String currentDateTime3 = dateFormat3.format(calendar.getTime());
 
                 SimpleDateFormat dateFormat4 = new SimpleDateFormat("MMM d, yyyy", Locale.getDefault());
