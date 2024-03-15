@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +25,7 @@ public class Notification extends AppCompatActivity {
 
     RecyclerView rv;
     ArrayList<Logs> list;
+    ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,15 @@ public class Notification extends AppCompatActivity {
 
         rv = findViewById(R.id.rc);
         showLogs();
+
+        back = findViewById(R.id.notifBackBTN);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Notification.this,ProfileSettings.class));
+            }
+        });
     }
     DatabaseReference ref;
 

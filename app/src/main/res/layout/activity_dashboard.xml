@@ -11,6 +11,7 @@
 
 
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,7 +69,7 @@
 
     <RelativeLayout
         android:id="@+id/humidityPanel"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="30dp"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:background="@drawable/backgrounddash"
@@ -186,7 +187,7 @@
         android:background="@drawable/backgrounddash"
         android:layout_below="@+id/humidityPanel"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="30dp"
         >
 
         <TextView
@@ -273,16 +274,23 @@
             android:layout_below="@+id/percentFan"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
-            android:text="OFF"
             android:theme="@style/SCBSwitch"
             android:textSize="25sp"
-            android:layout_centerHorizontal="true"
-            />
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:text="OFF"
+            android:layout_below="@+id/percentFan"
+            android:layout_marginTop="38dp"
+            android:textStyle="bold" />
+
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_toRightOf="@+id/percentFan"
             android:layout_marginTop="20dp"
             android:background="@drawable/fan" />
@@ -299,7 +307,7 @@
         android:background="@drawable/backgrounddash"
         android:layout_below="@+id/airPanel"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="30dp"
         >
 
         <TextView
@@ -417,18 +425,17 @@
         android:layout_height="140dp"
         android:layout_below="@+id/LightPanel"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/backgrounddash">
 
         <TextView
             android:id="@+id/percentFeeding"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="1dp"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="Light"
+            android:text="Feeding"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -454,21 +461,15 @@
             android:textSize="25sp" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="85dp"
             android:layout_marginTop="20dp"
             android:layout_toRightOf="@+id/highlowFeeding"
-            android:background="@drawable/bulb" />
+            android:background="@drawable/chicken" />
 
     </RelativeLayout>
     <!--        END OF FEEDING   -->
-
-
-
-
-
-
 
 
 

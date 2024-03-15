@@ -33,7 +33,7 @@ public class changepassword extends AppCompatActivity {
     DatabaseReference user;
     String id;
     Button btn;
-            ImageView back;
+    ImageView back;
 
 
     boolean isMatch = false;
@@ -52,6 +52,9 @@ public class changepassword extends AppCompatActivity {
         use = auths.getCurrentUser();
         btn = findViewById(R.id.signupBTN);
         back = findViewById(R.id.backBTN);
+
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -6,12 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".ProfileSettings">
 
+    <ImageView
+        android:id="@+id/back2BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back3"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:padding="10dp"
+        />
 
     <ImageView
         android:id="@+id/imgProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/profile"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
         />

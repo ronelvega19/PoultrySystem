@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -21,7 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileSettings extends AppCompatActivity {
 
         TextView name,emailProfile;
-        RelativeLayout accountDetailsGROUP,signout,cpass,notificationGroup;
+        RelativeLayout accountDetailsGROUP,signout,cpass,notificationGroup, go;
+        ImageView back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,26 @@ public class ProfileSettings extends AppCompatActivity {
         notificationGroup = findViewById(R.id.notificationGroup);
         signout = findViewById(R.id.signoutGroup);
         cpass = findViewById(R.id.changepassGroup);
+        back = findViewById(R.id.back2BTN);
+        go = findViewById(R.id.settingsGroup);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileSettings.this,dashboard.class));
+            }
+        });
+
+
+        go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileSettings.this,Settings.class));
+            }
+        });
+
+
+
         displayDATA();
         settings();
         cpass.setOnClickListener(

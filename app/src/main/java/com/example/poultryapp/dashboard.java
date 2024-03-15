@@ -33,9 +33,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+import android.os.Bundle;
+import android.widget.CompoundButton;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class dashboard extends AppCompatActivity {
-
     TextView percent,air,humid,dates,times;
     DatabaseReference temp;
     Switch lights, waters,feeds,fans;
@@ -63,6 +67,10 @@ public class dashboard extends AppCompatActivity {
         dates = findViewById(R.id.dateTV);
         times = findViewById(R.id.timeTV);
         burger = findViewById(R.id.burgerImage);
+
+
+
+
 
         statActivation();
         displayVal();
@@ -206,5 +214,14 @@ DatabaseReference CurrentTime;
                     }
                 }
         );
+
+
+
+
+
+
+
+
+
     }
 }

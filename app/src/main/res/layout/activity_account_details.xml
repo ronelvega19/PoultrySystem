@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/back3"
+        android:id="@+id/accBackBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/back3"
@@ -19,42 +19,16 @@
 
     <ImageView
         android:id="@+id/accountDetailsProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/profile"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/back3"
+        android:layout_below="@+id/accBackBTN"
 
         />
 
 
-<!--    UPLOAD PANEL   -->
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/accountDetailsProfile"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        >
-        <ImageView
-            android:id="@+id/uploadImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/upload"
-            />
-        <TextView
-            android:id="@+id/uploadTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Upload Picture"
-            android:layout_toRightOf="@+id/uploadImage"
-            android:paddingLeft="10dp"
-            />
-
-
-    </RelativeLayout>
-
-<!--    EMAILLL   -->
+    <!--    EMAILLL   -->
     <TextView
         android:id="@+id/emailTV"
         android:layout_width="wrap_content"
