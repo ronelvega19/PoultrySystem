@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileSettings extends AppCompatActivity {
 
         TextView name,emailProfile;
-        RelativeLayout accountDetailsGROUP,signout,cpass;
+        RelativeLayout accountDetailsGROUP,signout,cpass,notificationGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +29,7 @@ public class ProfileSettings extends AppCompatActivity {
         name = findViewById(R.id.nameProfile);
         emailProfile = findViewById(R.id.emailProfile);
         accountDetailsGROUP = findViewById(R.id.accountDetailsGROUP);
+        notificationGroup = findViewById(R.id.notificationGroup);
         signout = findViewById(R.id.signoutGroup);
         cpass = findViewById(R.id.changepassGroup);
         displayDATA();
@@ -37,8 +38,7 @@ public class ProfileSettings extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(ProfileSettings.this, changepassword.class
-                        ));
+                        startActivity(new Intent(ProfileSettings.this, changepassword.class));
                     }
                 }
         );
@@ -51,6 +51,15 @@ public class ProfileSettings extends AppCompatActivity {
                         editor.clear();
                         editor.apply();
                         startActivity(new Intent(ProfileSettings.this,SignIn.class));
+                    }
+                }
+        );
+
+        notificationGroup.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(ProfileSettings.this, Notification.class));
                     }
                 }
         );

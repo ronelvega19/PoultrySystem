@@ -3,13 +3,16 @@ package com.example.poultryapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,10 +32,15 @@ public class changepassword extends AppCompatActivity {
     FirebaseUser use;
     DatabaseReference user;
     String id;
-    Button btn ;
+    Button btn;
+            ImageView back;
+
+
     boolean isMatch = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_changepassword);
 
@@ -43,7 +51,26 @@ public class changepassword extends AppCompatActivity {
         auths = FirebaseAuth.getInstance();
         use = auths.getCurrentUser();
         btn = findViewById(R.id.signupBTN);
+        back = findViewById(R.id.backBTN);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(changepassword.this,ProfileSettings.class));
+            }
+        });
 
+
+passwordf();
+
+
+
+
+
+
+
+
+    }
+    public void passwordf(){
         btn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -86,7 +113,7 @@ public class changepassword extends AppCompatActivity {
 
                                                                                         if(isMatch){
                                                                                             userRef.child(id).child("password").setValue(String.valueOf(confirmPass.getText()));
-                                                                                             isMatch=false;
+                                                                                            isMatch=false;
                                                                                             Toast.makeText(getApplicationContext(), "Password updated successfully", Toast.LENGTH_SHORT).show();
                                                                                         }
 
@@ -121,7 +148,6 @@ public class changepassword extends AppCompatActivity {
                     }
                 }
         );
-
 
     }
 }
