@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,6 +24,7 @@ public class AccountDetails extends AppCompatActivity {
 
     TextView email,fname,lname,pass;
     Button done;
+    ImageView back3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,7 @@ public class AccountDetails extends AppCompatActivity {
         pass = findViewById(R.id.passwordTXT);
         email = findViewById(R.id.emailTXT);
         done = findViewById(R.id.doneBTN);
+        back3 = findViewById(R.id.back3);
 
         display();
 

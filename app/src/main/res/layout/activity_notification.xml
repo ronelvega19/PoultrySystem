@@ -28,6 +28,7 @@
             android:layout_centerInParent="true"
             android:text="Notification"
             android:textColor="@color/white"
+            android:textStyle="bold"
             android:textSize="20sp" />
 
 

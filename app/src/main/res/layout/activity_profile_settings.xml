@@ -7,13 +7,41 @@
     tools:context=".ProfileSettings">
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#00703d"
+        android:id="@+id/profileSettingsPanel"
+        >
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Profile Settings"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
     <ImageView
         android:id="@+id/imgProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/profile"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/profileSettingsPanel"
         />
 
 
@@ -45,8 +73,8 @@
         android:text="Profile"
         android:layout_below="@+id/emailProfile"
         android:layout_marginLeft="20dp"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+
         />
 
 <!--   PANEL NG MGA PINDUTAN EMEEE -->
@@ -57,7 +85,7 @@
         android:layout_height="300dp"
         android:background="@drawable/profileborder"
         android:layout_below="@+id/profileTV"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:padding="20dp"
         >

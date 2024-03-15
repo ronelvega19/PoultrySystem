@@ -7,23 +7,42 @@
     tools:context=".AccountDetails">
 
 
-    <ImageView
-        android:id="@+id/back3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/back3"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="40dp"
-        android:padding="10dp"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#00703d"
+        android:id="@+id/accountDetailsPanel"
+        >
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Account Details"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
 
     <ImageView
         android:id="@+id/accountDetailsProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/profile"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/back3"
+        android:layout_below="@+id/accountDetailsPanel"
 
         />
 
@@ -77,7 +96,7 @@
         android:background="@drawable/border"
         android:editable="false"
         android:padding="10dp"
-        android:text="f"
+
 
         />
 
@@ -105,7 +124,7 @@
         android:background="@drawable/border"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:text="First Name" />
+       />
 
 <!--   Last Name  -->
 
@@ -133,7 +152,7 @@
         android:background="@drawable/border"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:text="f"
+
         android:textSize="20sp" />
 
 <!--    PASSWORD  -->
@@ -163,7 +182,7 @@
         android:background="@drawable/border"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:text="p" />
+      />
 
     <Button
         android:id="@+id/doneBTN"
