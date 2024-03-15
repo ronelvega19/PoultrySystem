@@ -30,6 +30,7 @@ public class Settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_settings);
 
         min = findViewById(R.id.passFill);
         max = findViewById(R.id.passFilll);
@@ -57,9 +58,15 @@ public class Settings extends AppCompatActivity {
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for (DataSnapshot snap : snapshot.getChildren()) {
-                            min.setText(String.valueOf(snap.child("Min").getValue()));
-                        }
+                            min.setText(String.valueOf(snapshot.child("Temperature").child("Min").getValue()));
+                            max.setText(String.valueOf(snapshot.child("Temperature").child("Max").getValue()));
+                            air.setText(String.valueOf(snapshot.child("Carbon").child("Min").getValue()));
+                            fan.setText(String.valueOf(snapshot.child("Fan").child("Time").getValue()));
+                            light.setText(String.valueOf(snapshot.child("Light").child("Time").getValue()));
+                            water.setText(String.valueOf(snapshot.child("Fan").child("Time").getValue()));
+                            servo.setText(String.valueOf(snapshot.child("Servo").child("Time").getValue()));
+                            //water.setText(String.valueOf(snapshot.child("Fan").child("Time").getValue()));
+
                     }
 
                     @Override
@@ -67,6 +74,7 @@ public class Settings extends AppCompatActivity {
 
                     }
                 }
+
         );
 
         save.setOnClickListener(
@@ -80,8 +88,13 @@ public class Settings extends AppCompatActivity {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         for (DataSnapshot snap : snapshot.getChildren()) {
-                                            String newMin = String.valueOf(min.getText());
-                                            userRef.child("Carbon").child("Min").setValue(String.valueOf(min.getText()));
+                                            userRef.child("Temperature").child("Min").setValue(String.valueOf(min.getText()));
+                                            userRef.child("Temperature").child("Max").setValue(String.valueOf(max.getText()));
+                                            userRef.child("Carbon").child("Min").setValue(String.valueOf(air.getText()));
+                                            userRef.child("Fan").child("Time").setValue(String.valueOf(fan.getText()));
+                                            userRef.child("Light").child("Time").setValue(String.valueOf(light.getText()));
+                                            userRef.child("Water").child("Time").setValue(String.valueOf(water.getText()));
+                                            userRef.child("Servo").child("Time").setValue(String.valueOf(servo.getText()));
                                         }
                                     }
 
