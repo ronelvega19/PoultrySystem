@@ -39,11 +39,13 @@ public class AccountDetails extends AppCompatActivity {
         display();
 
     }
+
     DatabaseReference user;
     String id;
     boolean isMatch=false;
     DatabaseReference rd;
     FirebaseAuth userData;
+
     private void display(){
         email.setEnabled(false);
         pass.setEnabled(false);

@@ -36,7 +36,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:text="Broiler Management Guide"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -65,7 +65,7 @@ good health of the broilers."
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="TEMPERATURE (°C)"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -76,13 +76,13 @@ good health of the broilers."
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:text="Minimum"
         android:textAlignment="center"
         android:textSize="15dp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -90,13 +90,15 @@ good health of the broilers."
         android:id="@+id/passFill"
         android:layout_width="70dp"
         android:layout_height="50dp"
+        android:textAlignment="center"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="12dp"
         android:background="@drawable/border"
         android:inputType="number"
-        android:paddingLeft="10dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView22"
-        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintEnd_toStartOf="@+id/textView23"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView22" />
 
     <TextView
@@ -109,8 +111,7 @@ good health of the broilers."
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="@+id/passFill"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toEndOf="@+id/passFill"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/passFill" />
 
     <EditText
@@ -121,7 +122,8 @@ good health of the broilers."
         android:layout_marginStart="8dp"
         android:background="@drawable/border"
         android:inputType="number"
-        android:paddingLeft="10dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/passFill"
         app:layout_constraintStart_toEndOf="@+id/textView23"
         app:layout_constraintTop_toTopOf="@+id/passFill"
@@ -145,39 +147,42 @@ good health of the broilers."
         android:id="@+id/textView1111"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="28dp"
         android:text="AIR QUALITY"
-        android:textSize="20dp"
+        android:textSize="18dp"
+
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/passFill" />
 
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:inputType="number"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/textView1111"
+        app:layout_constraintStart_toEndOf="@+id/textView1111"
+        app:layout_constraintTop_toTopOf="@+id/textView1111"
+        app:layout_constraintVertical_bias="0.50" />
+
     <TextView
-        android:id="@+id/textView221"
+        android:id="@+id/textView22115"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
-        android:text="parts per million"
+        android:text="seconds"
         android:textAlignment="center"
         android:textSize="15dp"
         android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <EditText
-        android:id="@+id/passFill1"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/border"
-        android:inputType="number"
-        android:paddingLeft="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView221"
-        app:layout_constraintEnd_toEndOf="@+id/textView1111"
-        app:layout_constraintStart_toStartOf="@+id/textView1111"
-        app:layout_constraintTop_toBottomOf="@+id/textView1111" />
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toEndOf="@+id/editText5"
+        app:layout_constraintTop_toTopOf="@+id/editText5" />
 
     <TextView
         android:id="@+id/textView113"
@@ -185,21 +190,25 @@ good health of the broilers."
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="FAN"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView221" />
+        app:layout_constraintStart_toStartOf="@+id/textView1111"
+        app:layout_constraintTop_toBottomOf="@+id/textView1111" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
+        android:inputType="number"
+        android:textStyle="bold"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/textView113"
-        app:layout_constraintStart_toEndOf="@+id/textView113"
-        app:layout_constraintTop_toTopOf="@+id/textView113" />
+        app:layout_constraintEnd_toEndOf="@+id/editText5"
+        app:layout_constraintStart_toStartOf="@+id/editText5"
+        app:layout_constraintTop_toTopOf="@+id/textView113"
+        app:layout_constraintVertical_bias="0.50" />
 
     <TextView
         android:id="@+id/textView2211"
@@ -211,9 +220,169 @@ good health of the broilers."
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.856"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/textView22115"
         app:layout_constraintTop_toTopOf="@+id/editText" />
 
+    <TextView
+        android:id="@+id/textView1133"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="LIGHT BULB"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView113"
+        app:layout_constraintTop_toBottomOf="@+id/textView113" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/textView1133"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/textView1133" />
+
+    <TextView
+        android:id="@+id/textView22113"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="seconds"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2211"
+        app:layout_constraintTop_toTopOf="@+id/editText3"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <TextView
+        android:id="@+id/textView11331"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="WATER PUMP"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView113"
+        app:layout_constraintTop_toBottomOf="@+id/textView1133" />
+
+    <EditText
+        android:id="@+id/editText31"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/textView11331"
+        app:layout_constraintEnd_toEndOf="@+id/editText3"
+        app:layout_constraintStart_toStartOf="@+id/editText3"
+        app:layout_constraintTop_toTopOf="@+id/textView11331" />
+
+    <TextView
+        android:id="@+id/textView221131"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="seconds"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/editText31"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView22113"
+        app:layout_constraintTop_toTopOf="@+id/editText31"
+        app:layout_constraintVertical_bias="0.56" />
+
+    <TextView
+        android:id="@+id/textView101"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="FEEDING TIME"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView11331"
+        app:layout_constraintTop_toBottomOf="@+id/textView11331" />
+
+    <Button
+        android:id="@+id/timeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:width="140dp"
+        android:height="20dp"
+        android:backgroundTint="#313935"
+        android:onClick="popTimePicker"
+        android:text="Select Time"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView101"
+        app:layout_constraintEnd_toEndOf="@+id/textView221131"
+        app:layout_constraintStart_toStartOf="@+id/editText31"
+        app:layout_constraintTop_toTopOf="@+id/textView101" />
+
+    <TextView
+        android:id="@+id/textView1011"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="SERVO OPENING"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView101"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView101"
+        app:layout_constraintTop_toBottomOf="@+id/textView101" />
+
+    <EditText
+        android:id="@+id/editText3z1s"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/textView1011"
+        app:layout_constraintEnd_toEndOf="@+id/editText31"
+        app:layout_constraintStart_toStartOf="@+id/timeButton"
+        app:layout_constraintTop_toTopOf="@+id/textView1011" />
+
+    <TextView
+        android:id="@+id/textView221131s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="seconds"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/editText3z1s"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editText3z1s"
+        app:layout_constraintTop_toTopOf="@+id/editText3z1s" />
+
+    <Button
+        android:id="@+id/saveChanges"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
+        android:backgroundTint="#00703d"
+        android:text="Save Changes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1011" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
