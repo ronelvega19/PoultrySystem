@@ -192,6 +192,7 @@
         android:layout_below="@+id/passwordTXT"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
+        android:backgroundTint="#00703d"
 
 
 
