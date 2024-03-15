@@ -35,7 +35,7 @@ public class AccountDetails extends AppCompatActivity {
         pass = findViewById(R.id.passwordTXT);
         email = findViewById(R.id.emailTXT);
         done = findViewById(R.id.doneBTN);
-        back = findViewById(R.id.accBackBTN);
+        back = findViewById(R.id.backBTN);
         display();
 
         back.setOnClickListener(new View.OnClickListener() {

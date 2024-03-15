@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
-    TextView reguser,regpass,regconfirmpass,fName,lName;
+    TextView reguser,regpass,regconfirmpass,fName,lName, signs;
     Button signin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,18 @@ public class Register extends AppCompatActivity {
         signin = findViewById(R.id.regBtn);
         fName = findViewById(R.id.firstNameTXT);
         lName = findViewById(R.id.lastNameTXT);
+        signs = findViewById(R.id.signn);
+
+        signs.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(Register.this, SignIn.class);
+                        startActivity(intent);
+                    }
+                }
+        );
+
         signin.setOnClickListener(
                 new View.OnClickListener() {
                     @Override

@@ -6,15 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ProfileSettings">
 
-    <ImageView
-        android:id="@+id/back2BTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/back3"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:padding="10dp"
-        />
+
 
     <ImageView
         android:id="@+id/imgProfile"

@@ -29,10 +29,21 @@
         android:id="@+id/signTXT"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signTXT"
+        android:layout_alignStart="@+id/signTXT"
+        android:textAlignment="center"
+        android:layout_marginTop="8dp"
+        android:layout_alignEnd="@+id/signTXT"
+        android:text="Cluck in and explore!" />
+
     <EditText
-        android:layout_width="370dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="330dp"
+        android:layout_marginTop="60dp"
         android:layout_height="50dp"
+        android:lines="1"
         android:layout_below="@+id/signTXT"
         android:hint="Email"
         android:id="@+id/usernameTXT"
@@ -41,39 +52,70 @@
         android:paddingLeft="10dp"
         />
     <EditText
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
         android:hint="Password"
+        android:lines="1"
         android:layout_below="@+id/usernameTXT"
         android:inputType="textPassword"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/passwordTXT"
         android:background="@drawable/border"
         android:paddingLeft="10dp"
         android:layout_centerHorizontal="true"
-
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forgot Password?"
         android:layout_below="@+id/passwordTXT"
+        android:layout_alignStart="@+id/passwordTXT"
+        android:layout_marginStart="0dp"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="10dp"
-        />
+        android:layout_marginTop="9dp"
+        android:textColor="#00703D"
+        android:text="Forgot Password?" />
 
-<Button
-    android:layout_width="300dp"
-    android:layout_height="60dp"
-    android:text="Login"
+    <androidx.appcompat.widget.AppCompatButton
+    android:layout_width="330dp"
+    android:layout_height="50dp"
+    android:text="LOGIN"
     android:id="@+id/logs"
     android:layout_below="@+id/passwordTXT"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="50dp"
+    android:layout_marginTop="60dp"
     android:textSize="20dp"
-    android:backgroundTint="#00703d"
-
+        android:textColor="@color/white"
+    android:background="@drawable/buttonbg"
 />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logs"
+        android:layout_alignStart="@+id/logs"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="2dp"
+        android:text="Don’t have an account?" />
+
+    <TextView
+        android:id="@+id/signn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignEnd="@+id/logs"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/textView3"
+        android:text="Sign up here."
+        android:textColor="#00703D"
+        android:textStyle="bold" />
 
 </RelativeLayout>

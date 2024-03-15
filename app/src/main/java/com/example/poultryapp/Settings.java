@@ -3,6 +3,7 @@ package com.example.poultryapp;
 import static java.security.AccessController.getContext;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.widget.CompoundButton;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.app.TimePickerDialog;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -38,6 +40,7 @@ public class Settings extends AppCompatActivity {
     EditText min, max, air, fan, light, water, servo;
     TextView a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17;
     Button feed, save;
+    ImageView backk;
     Switch switchh;
     int hour, minute;
     int h;
@@ -60,6 +63,7 @@ public class Settings extends AppCompatActivity {
         feed = findViewById(R.id.timeButton);
         save = findViewById(R.id.saveChanges);
         feed = findViewById(R.id.timeButton);
+        backk = findViewById(R.id.back3);
 
         a1 = findViewById(R.id.textView);
         a2 = findViewById(R.id.textView2);
@@ -80,6 +84,13 @@ public class Settings extends AppCompatActivity {
         a17 = findViewById(R.id.textView221131s);
 
         switchh = findViewById(R.id.switchhh);
+
+        backk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Settings.this, ProfileSettings.class));
+            }
+        });
 
 
         switchh.setOnCheckedChangeListener(

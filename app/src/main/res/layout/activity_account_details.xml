@@ -8,38 +8,38 @@
 
 
     <ImageView
-        android:id="@+id/accBackBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/back3"
+        android:id="@+id/backBTN"
+        android:layout_width="15dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="40dp"
-        android:padding="10dp"
-        />
+        android:background="@drawable/back3" />
 
-    <ImageView
-        android:id="@+id/accountDetailsProfile"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/accBackBTN"
-
-        />
-
+    <TextView
+        android:id="@+id/changeTXT"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/backBTN"
+        android:layout_alignBottom="@+id/backBTN"
+        android:layout_marginLeft="-1dp"
+        android:layout_toRightOf="@+id/backBTN"
+        android:paddingLeft="15dp"
+        android:text="Edit Profile"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <!--    EMAILLL   -->
+
     <TextView
         android:id="@+id/emailTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
-        android:layout_below="@+id/accountDetailsProfile"
-        android:layout_marginTop="50dp"
+        android:layout_below="@+id/changeTXT"
         android:layout_marginLeft="40dp"
-        android:textSize="18sp"
+        android:layout_marginTop="44dp"
+        android:text="Email"
 
-        />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/emailTXT"
@@ -51,7 +51,7 @@
         android:background="@drawable/border"
         android:editable="false"
         android:padding="10dp"
-        android:text="f"
+        android:text="Email Address"
 
         />
 
@@ -92,9 +92,6 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="40dp"
         android:textSize="18sp"
-
-        android:padding="10dp"
-
         />
 
     <EditText
@@ -107,7 +104,7 @@
         android:background="@drawable/border"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:text="f"
+        android:text="Last Name"
         android:textSize="20sp" />
 
 <!--    PASSWORD  -->
@@ -120,12 +117,7 @@
         android:layout_below="@+id/lastNameTXT"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="40dp"
-        android:textSize="18sp"
-
-
-
-
-        />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/passwordTXT"
@@ -137,15 +129,16 @@
         android:background="@drawable/border"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:text="p" />
+        android:text="Password" />
 
     <Button
         android:id="@+id/doneBTN"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="Done"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="SAVE"
         android:layout_below="@+id/passwordTXT"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
+        android:textStyle="bold"
         android:layout_centerHorizontal="true"
 
 
