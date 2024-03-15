@@ -16,6 +16,9 @@
             android:name=".EmailVerification"
             android:exported="false" />
         <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
             android:name=".Notification"
             android:exported="false" />
         <activity
