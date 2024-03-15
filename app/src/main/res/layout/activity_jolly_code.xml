@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/green_background"
+    tools:context=".JollyCode">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="58dp"
+        android:layout_height="61dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/logojolly" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="55dp"
+        android:layout_toEndOf="@+id/logo"
+        android:text="TEAM JOLLYCODE"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/jester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JOHN JESTER SALEN"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/ceo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chief Executive Officer"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/jester"
+        android:layout_marginTop="2dp"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/russ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RUSSEL SALEN"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ceo"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/aceo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assistant CEO"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/russ"
+        android:layout_marginTop="2dp"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/bj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BEJAY FRANZ ACUNIN"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/aceo"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/bjID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chief Design and Developement Officer"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/bj"
+        android:layout_marginTop="2dp"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/ihceal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IHCEAL JAY ABANDO"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/bjID"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/ihcddo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assistant CDDO"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ihceal"
+        android:layout_marginTop="2dp"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/nicole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NICOLE PAJARES"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ihcddo"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/nicole2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chief Reserch and Documentation Officer"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/nicole"
+        android:layout_marginTop="2dp"
+        android:textSize="15sp"
+        />
+
+
+    <TextView
+        android:id="@+id/ateave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AVEGAIL ALIPANTE"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/nicole2"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/ateave2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assistant CRDO"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ateave"
+        android:layout_marginTop="2dp"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/mac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MACRIN ABANDO"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ateave2"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/josh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JOSHUA MAGTANGOB"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/mac"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/edsel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EDSEL PANGANIBAN"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/josh"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/ronel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RONEL VEGA"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/edsel"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/joaquin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JOAQUIN CUENCA"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ronel"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+
+    <TextView
+        android:id="@+id/don"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DON LORNEL VALENCIA"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/joaquin"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+</RelativeLayout>
