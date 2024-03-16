@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Register"
+    android:background="#19d099">
 
 <ImageView
     android:layout_width="200dp"
@@ -29,10 +30,25 @@
         android:layout_marginBottom="10dp"
         />
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signupTXT"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:text="Join our flock, feathered friends!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        />
     <EditText
         android:id="@+id/regUserTXT"
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
+        android:lines="1"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/signupTXT"
         android:layout_centerHorizontal="true"
         android:hint="Email"
@@ -41,28 +57,30 @@
 
     <EditText
         android:id="@+id/firstNameTXT"
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_below="@+id/regUserTXT"
         android:layout_centerHorizontal="true"
         android:hint="First Name"
+        android:lines="1"
         android:background="@drawable/border"
         android:layout_marginTop="10dp"
         android:paddingLeft="10dp" />
 
     <EditText
         android:id="@+id/lastNameTXT"
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_below="@+id/firstNameTXT"
         android:layout_centerHorizontal="true"
         android:hint="Last Name"
+        android:lines="1"
         android:layout_marginTop="10dp"
         android:background="@drawable/border"
         android:paddingLeft="10dp" />
 
     <EditText
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
         android:hint="Password"
         android:paddingLeft="10dp"
@@ -72,11 +90,10 @@
         android:background="@drawable/border"
         android:inputType="textPassword"
         android:id="@+id/regPasswordTXT"
-
         />
 
         <EditText
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="50dp"
         android:hint="Re-type Password"
         android:layout_below="@+id/regPasswordTXT"
@@ -86,22 +103,50 @@
         android:id="@+id/regRetypePasswordTXT"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
-
         />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/regBtn"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:text="Register"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/regRetypePasswordTXT"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:textSize="20dp"
-        android:backgroundTint="#00703d"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonbg"
+        android:text="Register"
+        />
 
-/>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regBtn"
+        android:layout_alignStart="@+id/regBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="2dp"
+        android:text="Already have an account?" />
+
+    <TextView
+        android:id="@+id/signn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignEnd="@+id/regBtn"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/textView3"
+        android:text="Sign in here."
+        android:textColor="#00703D"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

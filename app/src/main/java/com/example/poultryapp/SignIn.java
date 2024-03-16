@@ -28,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignIn extends AppCompatActivity {
 
-        TextView user, pass;
+        TextView user, pass, signs;
         Button check;
     FirebaseAuth users;
         DatabaseReference logins;
@@ -43,6 +43,17 @@ public class SignIn extends AppCompatActivity {
         user = findViewById(R.id.usernameTXT);
         pass = findViewById(R.id.passwordTXT);
         check = findViewById(R.id.logs);
+        signs = findViewById(R.id.signn);
+
+        signs.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        intent = new Intent(SignIn.this, Register.class);
+                        startActivity(intent);
+                    }
+                }
+        );
 
         check.setOnClickListener(
                 new View.OnClickListener() {

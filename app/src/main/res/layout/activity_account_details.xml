@@ -7,73 +7,28 @@
     tools:context=".AccountDetails">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#00703d"
-        android:id="@+id/accountDetailsPanel"
-        >
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/back"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Account Details"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-
-    </RelativeLayout>
-
-
+    <ImageView
+        android:id="@+id/accBackBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back3"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
+        android:padding="10dp"
+        />
 
     <ImageView
         android:id="@+id/accountDetailsProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/profile"
-        android:layout_marginTop="10dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/accountDetailsPanel"
+        android:layout_below="@+id/accBackBT"
 
         />
 
 
-<!--    UPLOAD PANEL   -->
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/accountDetailsProfile"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        >
-        <ImageView
-            android:id="@+id/uploadImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/upload"
-            />
-        <TextView
-            android:id="@+id/uploadTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Upload Picture"
-            android:layout_toRightOf="@+id/uploadImage"
-            android:paddingLeft="10dp"
-            />
-
-
-    </RelativeLayout>
-
-<!--    EMAILLL   -->
+    <!--    EMAILLL   -->
     <TextView
         android:id="@+id/emailTV"
         android:layout_width="wrap_content"
@@ -96,7 +51,7 @@
         android:background="@drawable/border"
         android:editable="false"
         android:padding="10dp"
-
+        android:text="f"
 
         />
 
@@ -124,7 +79,7 @@
         android:background="@drawable/border"
         android:minHeight="48dp"
         android:padding="10dp"
-       />
+        android:text="First Name" />
 
 <!--   Last Name  -->
 
@@ -152,7 +107,7 @@
         android:background="@drawable/border"
         android:minHeight="48dp"
         android:padding="10dp"
-
+        android:text="f"
         android:textSize="20sp" />
 
 <!--    PASSWORD  -->
@@ -182,7 +137,7 @@
         android:background="@drawable/border"
         android:inputType="textPassword"
         android:padding="10dp"
-      />
+        android:text="p" />
 
     <Button
         android:id="@+id/doneBTN"
@@ -192,7 +147,6 @@
         android:layout_below="@+id/passwordTXT"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="#00703d"
 
 
 

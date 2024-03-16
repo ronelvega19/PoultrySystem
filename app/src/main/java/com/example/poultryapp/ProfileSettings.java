@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -21,19 +22,33 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileSettings extends AppCompatActivity {
 
         TextView name,emailProfile;
-        RelativeLayout accountDetailsGROUP,signout,cpass,notificationGroup;
+        ImageView back;
+        RelativeLayout accountDetailsGROUP,signout,cpass,notificationGroup,settingsGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_settings);
         name = findViewById(R.id.nameProfile);
+        settingsGroup = findViewById(R.id.settingsGroup);
         emailProfile = findViewById(R.id.emailProfile);
         accountDetailsGROUP = findViewById(R.id.accountDetailsGROUP);
         notificationGroup = findViewById(R.id.notificationGroup);
         signout = findViewById(R.id.signoutGroup);
+
         cpass = findViewById(R.id.changepassGroup);
+
+        back = findViewById(R.id.back4);
+
         displayDATA();
         settings();
+        settingsGroup.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(ProfileSettings.this,Settings.class));
+                    }
+                }
+        );
         cpass.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -42,6 +57,19 @@ public class ProfileSettings extends AppCompatActivity {
                     }
                 }
         );
+
+
+
+        back.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(ProfileSettings.this, dashboard.class));
+                    }
+                }
+        );
+
+        
         signout.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
