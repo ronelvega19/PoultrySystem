@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0ec988"
+    tools:context=".dashboardnabago">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/burger1"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/burger"
+
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="270dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@+id/burger"
+        android:layout_toRightOf="@+id/burger"
+
+        android:id="@+id/iconnn"
+        android:background="@drawable/iconn" />
+
+
+<!--    TIMEEEEE -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:background="@drawable/rectangle"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/burger"
+        android:layout_marginTop="20dp"
+        android:id="@+id/timeGroup"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11:40 PM"
+            android:textSize="35sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:id="@+id/timeTV"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timeTV"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="March 5, 2024"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+
+
+<!--    DASHBOARD   -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/rectang"
+        android:layout_below="@+id/timeGroup"
+        android:id="@+id/dashboardGroup"
+        android:overScrollMode="never"
+
+        >
+
+                    
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+
+                >
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/white"
+                        />
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/white"
+                        />
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/white"
+                        />
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/white"
+                        />
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/white"
+                        />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+
+
+<!--    SWITCHESSSS    -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rectangle3"
+        android:layout_below="@id/dashboardGroup"
+        >
+
+<!--        LIGHTTSSS -->
+        <RelativeLayout
+            android:id="@+id/lightSwitch"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/lightswitch"
+            >
+
+        </RelativeLayout>
+
+<!--        FANNNNNN  -->
+        <RelativeLayout
+            android:id="@+id/fanSwitch"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/lightSwitch"
+            android:background="@drawable/fanbg"
+            >
+
+        </RelativeLayout>
+
+<!-- PUMPPPPPPP -->
+        <RelativeLayout
+            android:id="@+id/PumpSwitch"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/lightSwitch"
+            android:background="@drawable/pumpbg"
+            >
+
+        </RelativeLayout>
+
+<!--  FEEDING        -->
+        <RelativeLayout
+            android:id="@+id/feedingSwitch"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/PumpSwitch"
+            android:background="@drawable/fanbg"
+            android:layout_below="@id/fanSwitch"
+            >
+
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

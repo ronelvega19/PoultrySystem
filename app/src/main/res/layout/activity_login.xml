@@ -6,70 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".login">
 
-
-
     <ImageView
-        android:id="@+id/bg"
+        android:id="@+id/top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/henbg" />
-
-    <ImageView
-        android:id="@+id/hen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/img2"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/toppp" />
+
+
+    <ImageView
+        android:id="@+id/tao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/tao"
         />
 
     <TextView
         android:id="@+id/text"
-        android:layout_below="@+id/hen"
+        android:layout_below="@+id/tao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Hello"
+        android:text="Welcome to the Coop!"
         android:textStyle="bold"
-        android:textSize="40dp"
-        android:layout_marginTop="35dp"
+        android:textSize="35dp"
+        android:layout_marginTop="20dp"
         />
 
     <TextView
         android:id="@+id/tex2"
-        android:layout_width="370dp"
-        android:layout_height="62dp"
+        android:layout_width="206dp"
+        android:layout_height="71dp"
         android:layout_below="@+id/text"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginLeft="80dp"
         android:gravity="center"
-        android:text="Welcome to your friendly companion for poultry management"
+        android:text="Hatch your success story with this all-in poultry management companion."
         android:textSize="18dp"
+        android:textColor="#04a65c"
+        android:layout_marginTop="20dp"
         />
 
-    <Button
-        android:id="@+id/loginBTN"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="LOGIN"
-        android:layout_below="@+id/tex2"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="#d9d9d9"
-        android:textColor="@color/black"
 
-        />
+    <RelativeLayout
+        android:id="@+id/greenbot"
+        android:layout_width="match_parent"
+        android:layout_height="181dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/bot"
+        >
 
-    <Button
-        android:id="@+id/signupBTN"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="SIGN UP"
-        android:layout_below="@+id/loginBTN"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="#00703d"
-        />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginBTN"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:text="SIGN IN"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/graybg"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signupBTN"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/loginBTN"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buttonbg"
+            android:text="SIGN UP"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </RelativeLayout>

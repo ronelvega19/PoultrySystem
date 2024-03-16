@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,login.class));
+                startActivity(new Intent(MainActivity.this,dashboardnabago.class));
             }
         });
 

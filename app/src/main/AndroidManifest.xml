@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PoultryApp"
         tools:targetApi="31">
         <activity
+            android:name=".dashboardnabago"
+            android:exported="false" />
+        <activity
             android:name=".JollyCode"
             android:exported="false" />
         <activity
