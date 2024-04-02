@@ -80,6 +80,7 @@
         android:layout_below="@+id/timeGroup"
         android:id="@+id/dashboardGroup"
         android:overScrollMode="never"
+        android:layout_marginTop="5dp"
 
         >
 
@@ -89,6 +90,7 @@
                 android:layout_height="match_parent"
                 android:scrollbars="none"
 
+
                 >
                 
                 <LinearLayout
@@ -96,48 +98,200 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
 
+
                     >
+                    <!--                    HUMIDITYYYYYYYYYYYY     -->
 
-                    <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                    <RelativeLayout
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="20dp"
-                        android:background="@color/white"
-                        />
+                        android:background="@drawable/humiditydashboard"
+                        >
 
-                    <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        <TextView
+                            android:id="@+id/humidityPercent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="74%"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
+
+
+                            />
+
+                        <TextView
+                            android:id="@+id/humidityHighLow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="High"
+                            android:layout_below="@+id/humidityPercent"
+                            android:layout_marginLeft="15dp"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Humidity"
+                            android:layout_below="@+id/humidityHighLow"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="16sp"
+                            />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/humiditypic"
+                            android:layout_toRightOf="@+id/humidityHighLow"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+
+                            />
+
+                    </RelativeLayout>
+
+                    <!--                       END OF HUMIDITY   -->
+
+                    <!--                    TEMPERATURE           -->
+
+                    <RelativeLayout
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="20dp"
-                        android:background="@color/white"
-                        />
+                        android:background="@drawable/temp"
+                        >
 
-                    <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        <TextView
+                            android:id="@+id/temperaturePercent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="29°C"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
+
+
+                            />
+
+                        <TextView
+                            android:id="@+id/temperatureHighLow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="High"
+                            android:layout_below="@+id/temperaturePercent"
+                            android:layout_marginLeft="15dp"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Temperature"
+                            android:layout_below="@+id/temperatureHighLow"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="16sp"
+                            />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/templogo"
+                            android:layout_toRightOf="@+id/temperatureHighLow"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+
+                            />
+
+                    </RelativeLayout>
+
+                    <!--                       END OF TEMPERATURE   -->
+
+
+
+                    <!--                    AIR QUALITY            -->
+
+                    <RelativeLayout
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         android:layout_marginTop="40dp"
                         android:layout_marginLeft="20dp"
-                        android:background="@color/white"
-                        />
+                        android:background="@drawable/airqualitybg"
+                        >
 
-                    <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginLeft="20dp"
-                        android:background="@color/white"
-                        />
+                        <TextView
+                            android:id="@+id/airQualityPercent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="25AQI"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
 
-                    <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@color/white"
-                        />
+
+                            />
+
+                        <TextView
+                            android:id="@+id/airQualityHighLow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Good"
+                            android:layout_below="@+id/airQualityPercent"
+                            android:layout_marginLeft="15dp"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Air Quality"
+                            android:layout_below="@+id/airQualityHighLow"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="16sp"
+                            />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/air3"
+                            android:layout_toRightOf="@+id/airQualityHighLow"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+
+                            />
+
+                    </RelativeLayout>
+
+                    <!--                       END OF AIR QUALITY      -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 </LinearLayout>
 
@@ -154,6 +308,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/rectangle3"
         android:layout_below="@id/dashboardGroup"
+        android:id="@+id/switches"
         >
 
 <!--        LIGHTTSSS -->
@@ -165,6 +320,49 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/lightswitch"
             >
+
+            <TextView
+                android:id="@+id/lightTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Light"
+                android:textSize="20sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+
+                />
+
+            <TextView
+                android:id="@+id/lightOnOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ON"
+                android:layout_below="@+id/lightTV"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+
+               />
+
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lightOnOff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bulb2"
+                android:layout_toRightOf="@+id/lightOnOff"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                />
+
 
         </RelativeLayout>
 
@@ -179,6 +377,44 @@
             android:background="@drawable/fanbg"
             >
 
+            <TextView
+                android:id="@+id/fanTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fan"
+                android:textSize="20sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+
+                />
+
+            <TextView
+                android:id="@+id/fanOnOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OFF"
+                android:layout_below="@+id/fanTV"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+
+                />
+
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fanOnOff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+
+                />
+
+
+
+
+
+
         </RelativeLayout>
 
 <!-- PUMPPPPPPP -->
@@ -187,10 +423,44 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_below="@+id/lightSwitch"
             android:background="@drawable/pumpbg"
             >
+
+
+            <TextView
+                android:id="@+id/pumpTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pump"
+                android:textSize="20sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+
+                />
+
+            <TextView
+                android:id="@+id/pumpOnOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ON"
+                android:layout_below="@+id/pumpTV"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+
+                />
+
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pumpOnOff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+
+                />
 
         </RelativeLayout>
 
@@ -200,11 +470,54 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_toRightOf="@+id/PumpSwitch"
             android:background="@drawable/fanbg"
             android:layout_below="@id/fanSwitch"
             >
+
+
+            <TextView
+                android:id="@+id/feedingTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feeding"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+
+                />
+
+            <TextView
+                android:id="@+id/feedingOnOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ON"
+                android:layout_below="@+id/feedingTV"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+
+                />
+
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/feedingOnOff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/feed"
+                android:layout_toRightOf="@+id/feedingOnOff"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                />
 
 
         </RelativeLayout>
@@ -213,6 +526,7 @@
 
 
     </RelativeLayout>
+
 
 
 </RelativeLayout>
