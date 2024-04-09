@@ -42,7 +42,16 @@
         android:text="Join our flock, feathered friends!"
         android:textAlignment="center"
         android:textColor="@color/white"
+        android:id="@+id/img1"
         />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/img1"
+        android:background="@drawable/asdsadsad" />
+
     <EditText
         android:id="@+id/regUserTXT"
         android:layout_width="330dp"
@@ -56,35 +65,11 @@
         android:paddingLeft="10dp" />
 
     <EditText
-        android:id="@+id/firstNameTXT"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/regUserTXT"
-        android:layout_centerHorizontal="true"
-        android:hint="First Name"
-        android:lines="1"
-        android:background="@drawable/border"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="10dp" />
-
-    <EditText
-        android:id="@+id/lastNameTXT"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/firstNameTXT"
-        android:layout_centerHorizontal="true"
-        android:hint="Last Name"
-        android:lines="1"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/border"
-        android:paddingLeft="10dp" />
-
-    <EditText
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:hint="Password"
         android:paddingLeft="10dp"
-        android:layout_below="@+id/lastNameTXT"
+        android:layout_below="@+id/regUserTXT"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:background="@drawable/border"
@@ -147,6 +132,4 @@
         android:text="Sign in here."
         android:textColor="#00703D"
         android:textStyle="bold" />
-
-
-</RelativeLayout>
+   </RelativeLayout>
