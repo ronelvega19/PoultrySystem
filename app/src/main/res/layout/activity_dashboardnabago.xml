@@ -360,6 +360,7 @@
 
 
             <Switch
+                android:id="@+id/lightSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/lightOnOff"
@@ -416,6 +417,7 @@
 
 
             <Switch
+                android:id="@+id/fanSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/fanOnOff"
@@ -468,6 +470,7 @@
 
 
             <Switch
+                android:id="@+id/pumpSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/pumpOnOff"
@@ -516,6 +519,7 @@
 
 
             <Switch
+                android:id="@+id/feedSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/feedingOnOff"
