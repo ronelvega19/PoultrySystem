@@ -73,7 +73,7 @@ public class SignIn extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<AuthResult> task) {
                                             if(task.isSuccessful()){
                                                 if(mAuth.getCurrentUser().isEmailVerified()){
-                                                    intent = new Intent(SignIn.this, dashboard.class);
+                                                    intent = new Intent(SignIn.this, dashboardnabago.class);
 
                                                     startActivity(intent);
 

@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/green_background"
+    android:background="#03c67e"
     tools:context=".verified">
 
 
     <RelativeLayout
-        android:layout_width="306dp"
-        android:layout_height="400dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginTop="200dp"
-        android:background="@drawable/boarderradius"
-        >
+        android:background="@drawable/haaaaaaa">
 
         <ImageView
             android:id="@+id/check"
@@ -22,31 +21,18 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:background="@drawable/check" />
+            android:background="@drawable/check1" />
 
-        <TextView
-            android:id="@+id/verifiedTXT"
+        <Button
+            android:id="@+id/gtdBTN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/check"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="28dp"
-            android:text="Verified"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/yey"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:layout_below="@+id/verifiedTXT"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="101dp"
-            android:gravity="center"
-            android:text="Yey, you've successfully verified your account"
-            android:textSize="15dp" />
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#05e173"
+            android:text="Go to Dashboard"
+            android:textSize="20sp" />
 
 
     </RelativeLayout>

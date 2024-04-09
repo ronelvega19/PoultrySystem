@@ -47,17 +47,22 @@
 
 
     <RelativeLayout
+        android:id="@+id/white1"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:layout_below="@+id/img1"
-        android:background="@drawable/asdsadsad" />
+        android:background="@drawable/asdsadsad"
+
+
+
+        />
 
     <EditText
         android:id="@+id/regUserTXT"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:lines="1"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_below="@+id/signupTXT"
         android:layout_centerHorizontal="true"
         android:hint="Email"
@@ -95,41 +100,40 @@
         android:id="@+id/regBtn"
         android:layout_width="330dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/regRetypePasswordTXT"
+        android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
         android:textSize="20dp"
         android:textColor="@color/white"
         android:background="@drawable/buttonbg"
         android:text="Register"
+        android:layout_marginTop="50dp"
         />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/regBtn"
+        android:layout_below="@+id/regRetypePasswordTXT"
         android:layout_alignStart="@+id/regBtn"
-        android:layout_alignParentBottom="true"
+
         android:layout_marginStart="38dp"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="2dp"
-        android:text="Already have an account?" />
+        android:text="Agree to these" />
 
     <TextView
         android:id="@+id/signn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView3"
-        android:layout_alignEnd="@+id/regBtn"
+
         android:layout_alignBottom="@+id/textView3"
         android:layout_marginStart="6dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="38dp"
-        android:layout_marginBottom="0dp"
         android:layout_toEndOf="@+id/textView3"
-        android:text="Sign in here."
+        android:text="Terms and Conditions"
         android:textColor="#00703D"
         android:textStyle="bold" />
    </RelativeLayout>
