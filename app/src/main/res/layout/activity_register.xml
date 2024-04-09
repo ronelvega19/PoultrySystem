@@ -52,10 +52,12 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/img1"
         android:background="@drawable/asdsadsad"
+        >
 
 
+    </RelativeLayout>
 
-        />
+
 
     <EditText
         android:id="@+id/regUserTXT"
@@ -100,7 +102,7 @@
         android:id="@+id/regBtn"
         android:layout_width="330dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/termsandconditionscheck"
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
         android:textColor="@color/white"
@@ -109,8 +111,9 @@
         android:layout_marginTop="50dp"
         />
 
-    <TextView
-        android:id="@+id/textView3"
+
+    <CheckBox
+        android:id="@+id/termsandconditionscheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/regRetypePasswordTXT"
@@ -126,14 +129,14 @@
         android:id="@+id/signn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView3"
-
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="38dp"
-        android:layout_toEndOf="@+id/textView3"
+        android:layout_marginTop="14dp"
+        android:layout_alignTop="@+id/termsandconditionscheck"
+        android:layout_alignBottom="@+id/termsandconditionscheck"
+        android:layout_toEndOf="@+id/termsandconditionscheck"
         android:text="Terms and Conditions"
         android:textColor="#00703D"
         android:textStyle="bold" />
-   </RelativeLayout>
+
+
+</RelativeLayout>
+

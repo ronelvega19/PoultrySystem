@@ -9,11 +9,15 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
-    TextView reguser,regpass,regconfirmpass,fName,lName, signs;
+    TextView reguser,regpass,regconfirmpass,fName,lName, signs, tt;
+    CheckBox cb;
+    static boolean isCheck = false;
     Button signin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +27,37 @@ public class Register extends AppCompatActivity {
         regpass = findViewById(R.id.regPasswordTXT);
         regconfirmpass = findViewById(R.id.regRetypePasswordTXT);
         signin = findViewById(R.id.regBtn);
-        fName = findViewById(R.id.firstNameTXT);
-        lName = findViewById(R.id.lastNameTXT);
-        signs = findViewById(R.id.signn);
 
-        signs.setOnClickListener(
+        cb = findViewById(R.id.termsandconditionscheck);
+        tt = findViewById(R.id.signn);
+        cb.setChecked(false);
+        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    cb.setChecked(true);
+                }
+            }
+        });
+
+
+        tt.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(Register.this, SignIn.class);
+                        Intent intent = new Intent(Register.this, Terms_and_Conditions.class);
                         startActivity(intent);
                     }
                 }
         );
+
+
+            cb.setChecked(isCheck);
+
+
+
+
+
 
         signin.setOnClickListener(
                 new View.OnClickListener() {

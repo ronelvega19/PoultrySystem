@@ -9,8 +9,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#00703d"
+        android:layout_height="150dp"
+        android:background="@drawable/profiletopbg"
         android:id="@+id/profileSettingsPanel"
         >
         <ImageView
@@ -26,12 +26,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Profile Settings"
+            android:text="Profile"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
-
-
     </RelativeLayout>
 
 
@@ -41,7 +39,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/profile"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/profileSettingsPanel"
         />
 
@@ -86,7 +84,7 @@
         android:layout_height="300dp"
         android:background="@drawable/profileborder"
         android:layout_below="@+id/profileTV"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="1dp"
         android:layout_centerHorizontal="true"
         android:padding="20dp"
         >
