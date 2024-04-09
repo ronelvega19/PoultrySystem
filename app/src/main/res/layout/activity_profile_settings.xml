@@ -9,27 +9,33 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="280dp"
         android:background="@drawable/profiletopbg"
         android:id="@+id/profileSettingsPanel"
         >
+
         <ImageView
             android:id="@+id/back4"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:background="@drawable/back"
+            android:layout_marginTop="50dp"
             />
 
         <TextView
+            android:id="@+id/text11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_marginTop="50dp"
             android:text="Profile"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            />
+
+
     </RelativeLayout>
 
 
@@ -37,10 +43,9 @@
         android:id="@+id/imgProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/profile"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/profileSettingsPanel"
+        android:background="@drawable/profile"
+        android:layout_marginTop="80dp"
         />
 
 
@@ -67,6 +72,7 @@
 
     <TextView
         android:id="@+id/profileTV"
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Profile"
@@ -83,8 +89,8 @@
         android:layout_width="370dp"
         android:layout_height="300dp"
         android:background="@drawable/profileborder"
-        android:layout_below="@+id/profileTV"
-        android:layout_marginTop="1dp"
+        android:layout_below="@+id/profileSettingsPanel"
+        android:layout_marginTop="60dp"
         android:layout_centerHorizontal="true"
         android:padding="20dp"
         >

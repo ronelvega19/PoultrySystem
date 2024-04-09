@@ -61,7 +61,7 @@
         android:layout_below="@+id/rev1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="72dp"
-        android:backgroundTint="#05e173"
+        android:backgroundTint="#0df99f"
         android:text="Get Started"
         android:textSize="20dp" />
 

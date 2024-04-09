@@ -30,7 +30,7 @@
             android:layout_below="@+id/check"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#05e173"
+            android:backgroundTint="#0df99f"
             android:text="Go to Dashboard"
             android:textSize="20sp" />
 

@@ -31,10 +31,11 @@ public class Terms_and_Conditions extends AppCompatActivity {
                     public void onClick(View v) {
 
                         Register.isCheck=true;
-                        Intent intent = new Intent(Terms_and_Conditions.this,Register.class);
+                        Intent intent1 = new Intent(Terms_and_Conditions.this,Register.class);
+                        Intent intent = new Intent(Terms_and_Conditions.this,EmailVerification.class);
                         intent.putExtra("username",user);
                         intent.putExtra("password",pass);
-                        startActivity(intent);
+                        startActivity(intent1);
                     }
                 }
         );
