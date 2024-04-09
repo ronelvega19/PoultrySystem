@@ -55,88 +55,116 @@
         >
 
 
+        <TextView
+            android:id="@+id/emailtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginLeft="40dp"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+
+            />
+        <EditText
+            android:id="@+id/regUserTXT"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/emailtxt"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/border"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/passtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_below="@id/regUserTXT"
+            android:layout_marginLeft="40dp"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+
+
+            />
+
+        <EditText
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:paddingLeft="5dp"
+            android:layout_below="@+id/passtxt"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/border"
+            android:inputType="textPassword"
+            android:id="@+id/regPasswordTXT"
+            />
+
+        <TextView
+            android:id="@+id/repasstxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_below="@id/regPasswordTXT"
+            android:layout_marginLeft="40dp"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+
+
+            />
+
+        <EditText
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/repasstxt"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/border"
+            android:id="@+id/regRetypePasswordTXT"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/regBtn"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/termsandconditionscheck"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/buttonbg"
+            android:text="Register"
+            android:backgroundTint="#0df99f"
+            />
+
+
+        <CheckBox
+            android:id="@+id/termsandconditionscheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/regRetypePasswordTXT"
+            android:layout_alignStart="@+id/regBtn"
+            android:layout_marginBottom="2dp"
+            android:text="Agree to these"
+            />
+
+        <TextView
+            android:id="@+id/signn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_alignTop="@+id/termsandconditionscheck"
+            android:layout_alignBottom="@+id/termsandconditionscheck"
+            android:layout_toEndOf="@+id/termsandconditionscheck"
+            android:text="Terms and Conditions"
+            android:textColor="#00703D"
+            android:textStyle="bold" />
+
+
     </RelativeLayout>
 
 
-
-    <EditText
-        android:id="@+id/regUserTXT"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:lines="1"
-        android:layout_marginTop="60dp"
-        android:layout_below="@+id/signupTXT"
-        android:layout_centerHorizontal="true"
-        android:hint="Email"
-        android:background="@drawable/border"
-        android:paddingLeft="10dp" />
-
-    <EditText
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:hint="Password"
-        android:paddingLeft="10dp"
-        android:layout_below="@+id/regUserTXT"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/border"
-        android:inputType="textPassword"
-        android:id="@+id/regPasswordTXT"
-        />
-
-        <EditText
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:hint="Re-type Password"
-        android:layout_below="@+id/regPasswordTXT"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/border"
-        android:id="@+id/regRetypePasswordTXT"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/regBtn"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/termsandconditionscheck"
-        android:layout_centerHorizontal="true"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        android:background="@drawable/buttonbg"
-        android:text="Register"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="#0df99f"
-        />
-
-
-    <CheckBox
-        android:id="@+id/termsandconditionscheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/regRetypePasswordTXT"
-        android:layout_alignStart="@+id/regBtn"
-
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="2dp"
-        android:text="Agree to these" />
-
-    <TextView
-        android:id="@+id/signn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_alignTop="@+id/termsandconditionscheck"
-        android:layout_alignBottom="@+id/termsandconditionscheck"
-        android:layout_toEndOf="@+id/termsandconditionscheck"
-        android:text="Terms and Conditions"
-        android:textColor="#00703D"
-        android:textStyle="bold" />
 
 
 </RelativeLayout>

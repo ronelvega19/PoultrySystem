@@ -30,6 +30,9 @@ public class dashboardnabago extends AppCompatActivity {
         bur = findViewById(R.id.burger);
 
 
+
+
+
         bur.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -56,6 +59,9 @@ public class dashboardnabago extends AppCompatActivity {
 //                        carbonValue.setText(String.format("%dPPM", cValue));
 //                        humidityValue.setText(String.format("%d%%", hValue));
                     }
+
+
+
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {

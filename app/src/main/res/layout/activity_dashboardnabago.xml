@@ -75,7 +75,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="230dp"
+        android:layout_height="220dp"
         android:background="@drawable/rectang"
         android:layout_below="@+id/timeGroup"
         android:id="@+id/dashboardGroup"
@@ -99,9 +99,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="none"
-
-
-
 
                 >
                 
@@ -319,7 +316,6 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:background="@drawable/rectangle3"
         android:layout_below="@id/dashboardGroup"
         android:id="@+id/switches"
@@ -359,14 +355,16 @@
                />
 
 
-            <Switch
+            <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/lightOnOff"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-
+                app:thumbTint="@color/white"
+                app:trackTint="@drawable/lightcolor"
                 />
+
 
             <ImageView
                 android:layout_width="50dp"
@@ -415,13 +413,15 @@
                 />
 
 
-            <Switch
+
+            <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/fanOnOff"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-
+                app:trackTint="@drawable/fanswitch"
+                app:thumbTint="@color/white"
                 />
 
 
@@ -467,13 +467,15 @@
                 />
 
 
-            <Switch
+
+            <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/pumpOnOff"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-
+                app:thumbTint="@color/white"
+                app:trackTint="@drawable/pumpswitch"
                 />
 
         </RelativeLayout>
@@ -486,7 +488,7 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@+id/PumpSwitch"
-            android:background="@drawable/fanbg"
+            android:background="@drawable/feedingbg"
             android:layout_below="@id/fanSwitch"
             >
 
@@ -515,13 +517,15 @@
                 />
 
 
-            <Switch
+
+            <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/feedingOnOff"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-
+                app:thumbTint="@color/white"
+                app:trackTint="@drawable/feedingswitch"
                 />
 
             <ImageView
@@ -535,6 +539,16 @@
 
 
         </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/logojolly1"
+            android:layout_toRightOf="@id/feedingSwitch"
+            android:layout_marginTop="260dp"
+            android:layout_marginLeft="10dp"
+
+            />
 
 
 
