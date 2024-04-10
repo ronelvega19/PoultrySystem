@@ -63,48 +63,45 @@ public class newSettings extends AppCompatActivity {
             }
         });
 
+        display();
+
         switchh.setOnCheckedChangeListener(
 
                 new CompoundButton.OnCheckedChangeListener() {
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         DatabaseReference userRef2 = FirebaseDatabase.getInstance().getReference().child("Settings");
                         check = FirebaseDatabase.getInstance().getReference().child("Settings");
-                        check.addListenerForSingleValueEvent(
+                        userRef2.addListenerForSingleValueEvent(
                                 new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         for (DataSnapshot snap : snapshot.getChildren()) {
                                             if (!isChecked) {
-                                                int checkNo = 1;
+                                                int checkNo = 0;
                                                 userRef2.child("isAutomatic").setValue(checkNo);
-                                                a1.setVisibility(View.GONE);
-                                                a2.setVisibility(View.GONE);
-                                                a3.setVisibility(View.GONE);
-                                                newLayout.setVisibility(View.GONE);
-                                                min.setVisibility(View.GONE);
-                                                max.setVisibility(View.GONE);
-                                                air.setVisibility(View.GONE);
-                                                fan.setVisibility(View.GONE);
-                                                light.setVisibility(View.GONE);
-                                                water.setVisibility(View.GONE);
-                                                servo.setVisibility(View.GONE);
-                                                save.setVisibility(View.GONE);
-                                            }
+                                                min.setClickable(false);
+                                                min.setFocusable(false);
+                                                max.setClickable(false);
+                                                max.setFocusable(false);
+                                                air.setClickable(false);
+                                                air.setFocusable(false);
+                                                fan.setClickable(false);
+                                                fan.setFocusable(false);
+                                                light.setClickable(false);
+                                                light.setFocusable(false); }
                                             if (isChecked) {
-                                                int checkYes = 0;
+                                                int checkYes = 1;
                                                 userRef2.child("isAutomatic").setValue(checkYes);
-                                                a1.setVisibility(View.VISIBLE);
-                                                a2.setVisibility(View.VISIBLE);
-                                                a3.setVisibility(View.VISIBLE);
-                                                newLayout.setVisibility(View.VISIBLE);
-                                                min.setVisibility(View.VISIBLE);
-                                                max.setVisibility(View.VISIBLE);
-                                                air.setVisibility(View.VISIBLE);
-                                                fan.setVisibility(View.VISIBLE);
-                                                light.setVisibility(View.VISIBLE);
-                                                water.setVisibility(View.VISIBLE);
-                                                servo.setVisibility(View.VISIBLE);
-                                                save.setVisibility(View.VISIBLE);
+                                                min.setClickable(true);
+                                                min.setFocusable(true);
+                                                max.setClickable(true);
+                                                max.setFocusable(true);
+                                                air.setClickable(true);
+                                                air.setFocusable(true);
+                                                fan.setClickable(true);
+                                                fan.setFocusable(true);
+                                                light.setClickable(true);
+                                                light.setFocusable(true);
                                             }
                                         }
                                     }
@@ -124,7 +121,6 @@ public class newSettings extends AppCompatActivity {
 
         );
 
-        display();
     }
 
     DatabaseReference settings, time;
@@ -134,37 +130,33 @@ public class newSettings extends AppCompatActivity {
 
     private void display() {
 
-        check = FirebaseDatabase.getInstance().getReference().child("Settings");
-        String th = (String.valueOf(check.child("isAutomatic")));
-
-        if (th == "1") {
-            a1.setVisibility(View.GONE);
-            a2.setVisibility(View.GONE);
-            a3.setVisibility(View.GONE);
-            newLayout.setVisibility(View.GONE);
-            min.setVisibility(View.GONE);
-            max.setVisibility(View.GONE);
-            air.setVisibility(View.GONE);
-            fan.setVisibility(View.GONE);
-            light.setVisibility(View.GONE);
-            water.setVisibility(View.GONE);
-            servo.setVisibility(View.GONE);
-            save.setVisibility(View.GONE);
-        }
-        if (th == "0") {
-            a1.setVisibility(View.VISIBLE);
-            a2.setVisibility(View.VISIBLE);
-            a3.setVisibility(View.VISIBLE);
-            newLayout.setVisibility(View.VISIBLE);
-            min.setVisibility(View.VISIBLE);
-            max.setVisibility(View.VISIBLE);
-            air.setVisibility(View.VISIBLE);
-            fan.setVisibility(View.VISIBLE);
-            light.setVisibility(View.VISIBLE);
-            water.setVisibility(View.VISIBLE);
-            servo.setVisibility(View.VISIBLE);
-            save.setVisibility(View.VISIBLE);
-        }
+//        check = FirebaseDatabase.getInstance().getReference().child("Settings");
+//        String th = (String.valueOf(check.child("isAutomatic")));
+//
+//        if (th == "1") {
+//            min.setClickable(true);
+//            min.setFocusable(true);
+//            max.setClickable(true);
+//            max.setFocusable(true);
+//            air.setClickable(true);
+//            air.setFocusable(true);
+//            fan.setClickable(true);
+//            fan.setFocusable(true);
+//            light.setClickable(true);
+//            light.setFocusable(true);
+//        }
+//        if (th == "0") {
+//            min.setClickable(false);
+//            min.setFocusable(false);
+//            max.setClickable(false);
+//            max.setFocusable(false);
+//            air.setClickable(false);
+//            air.setFocusable(false);
+//            fan.setClickable(false);
+//            fan.setFocusable(false);
+//            light.setClickable(false);
+//            light.setFocusable(false);
+//        }
 
 
         userData = FirebaseAuth.getInstance();

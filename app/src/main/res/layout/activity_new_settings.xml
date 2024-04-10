@@ -64,7 +64,6 @@
 
     <TextView
         android:id="@+id/textView"
-        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -80,7 +79,6 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="350dp"
-        android:visibility="invisible"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="This is where you can modify and make changes in the automation of your poultry device. The data here are the basis in taking care and maintaining
@@ -96,7 +94,6 @@ good health of the broilers."
 
     <ImageView
         android:id="@+id/imageView"
-        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:layout_height="750dp"
@@ -111,7 +108,6 @@ good health of the broilers."
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/newLayout"
         android:layout_width="match_parent"
-        android:visibility="invisible"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -514,7 +510,7 @@ good health of the broilers."
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imageView16"
             app:layout_constraintEnd_toEndOf="@+id/imageView16"
-            app:layout_constraintHorizontal_bias="0.30"
+            app:layout_constraintHorizontal_bias="0.35"
             app:layout_constraintStart_toStartOf="@+id/imageView16"
             app:layout_constraintTop_toTopOf="@+id/imageView16" />
 
@@ -587,7 +583,7 @@ good health of the broilers."
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/servooo"
             app:layout_constraintEnd_toEndOf="@+id/servooo"
-            app:layout_constraintHorizontal_bias="0.30"
+            app:layout_constraintHorizontal_bias="0.34"
             app:layout_constraintStart_toStartOf="@+id/servooo"
             app:layout_constraintTop_toTopOf="@+id/servooo" />
 
