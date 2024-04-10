@@ -104,7 +104,7 @@
             android:id="@+id/repasstxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="Confirm Password"
             android:layout_below="@id/regPasswordTXT"
             android:layout_marginLeft="40dp"
             android:textSize="20sp"

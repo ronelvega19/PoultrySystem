@@ -26,6 +26,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public class dashboardnabago extends AppCompatActivity {
+
+    ImageView pic, bur;
     TextView humidityValue, tempValue, carbonValue,date;
     SwitchCompat lightSwitch, fanSwitch, pumpSwitch,feedSwitch;
     @Override
@@ -40,13 +42,19 @@ public class dashboardnabago extends AppCompatActivity {
         pumpSwitch = findViewById(R.id.pumpSwitchs);
         feedSwitch = findViewById(R.id.feedSwitchs);
         date = findViewById(R.id.dates);
-        ImageView bur;
 
         bur = findViewById(R.id.burger);
+        pic = findViewById(R.id.teamid);
 
 
-
-
+        pic.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(dashboardnabago.this, team.class));
+                    }
+                }
+        );
 
         bur.setOnClickListener(
                 new View.OnClickListener() {

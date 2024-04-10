@@ -33,6 +33,7 @@
 
 <!--    TIMEEEEE -->
     <RelativeLayout
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="130dp"
         android:background="@drawable/rectangle"
@@ -548,12 +549,13 @@
         </RelativeLayout>
 
         <ImageView
+            android:id="@+id/teamid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/logojolly1"
             android:layout_toRightOf="@id/feedingSwitch"
-            android:layout_marginTop="260dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="240dp"
+            android:layout_marginLeft="15dp"
 
             />
 
