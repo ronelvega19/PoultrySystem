@@ -132,7 +132,7 @@ public class dashboardnabago extends AppCompatActivity {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         statusRef.child("LIGHT").setValue(isChecked ? 1 : 0);
-                        new ActivityLogs().addLog("logs in");
+                        new ActivityLogs().addLog(isChecked?"turns on heat lamp":"turns off heat lamp");
                     }
                 }
         );
@@ -141,7 +141,7 @@ public class dashboardnabago extends AppCompatActivity {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         statusRef.child("WATER").setValue(isChecked ? 1 : 0);
-                        new ActivityLogs().addLog("logs in");
+                        new ActivityLogs().addLog(isChecked?"turns on water pump":"turns off water pump");
                     }
                 }
         );
@@ -150,7 +150,8 @@ public class dashboardnabago extends AppCompatActivity {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         statusRef.child("FAN").setValue(isChecked ? 1 : 0);
-                        new ActivityLogs().addLog("logs in");
+                        new ActivityLogs().addLog(isChecked?"turns on ventilation":"turns off ventilation");
+
                     }
                 }
         );
@@ -159,7 +160,8 @@ public class dashboardnabago extends AppCompatActivity {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         statusRef.child("FEED").setValue(isChecked ? 1 : 0);
-                        new ActivityLogs().addLog("logs in");
+                        if(isChecked)
+                            new ActivityLogs().addLog("was fed the chicken");
                     }
                 }
         );
