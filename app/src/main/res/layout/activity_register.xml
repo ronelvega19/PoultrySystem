@@ -48,10 +48,10 @@
 
     <RelativeLayout
         android:id="@+id/white1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@+id/img1"
-        android:background="@drawable/white6"
+        android:background="@drawable/white"
         >
 
 
@@ -138,6 +138,31 @@
             android:backgroundTint="#0df99f"
             />
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/regBtn"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:text="Already have an account?" />
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textView3"
+
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/textView3"
+            android:text="Sign in here."
+            android:textColor="#00703D"
+            android:textStyle="bold" />
+
 
         <CheckBox
             android:id="@+id/termsandconditionscheck"
@@ -159,7 +184,9 @@
             android:layout_toEndOf="@+id/termsandconditionscheck"
             android:text="Terms and Conditions"
             android:textColor="#00703D"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginLeft="3dp"
+            />
 
 
     </RelativeLayout>

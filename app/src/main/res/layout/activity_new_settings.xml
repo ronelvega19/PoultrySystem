@@ -13,7 +13,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/back3"
+        android:background="@drawable/backbtn3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -225,7 +225,7 @@ good health of the broilers."
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/pink"
         android:layout_width="150dp"
         android:layout_height="45dp"
         android:background="@drawable/newair2"
@@ -234,6 +234,25 @@ good health of the broilers."
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/airdot"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Air Quality"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/pink"
+        app:layout_constraintEnd_toEndOf="@+id/pink"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/pink"
+        app:layout_constraintVertical_bias="0.52" />
 
     <ImageView
         android:id="@+id/imageView4"

@@ -356,6 +356,7 @@
 
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/pumpSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/lightOnOff"
@@ -519,6 +520,7 @@
 
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/feedSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/feedingOnOff"

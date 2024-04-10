@@ -26,14 +26,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class SignIn extends AppCompatActivity {
 
         TextView user, pass, signs;
         Button check;
-    FirebaseAuth users;
-        DatabaseReference logins;
         boolean isMatch=false;
-        FirebaseAuth mAuth;
+    FirebaseAuth users;
+    DatabaseReference logins;
+
+    DatabaseReference actlog;
+    FirebaseAuth mAuth;
     Intent intent;
     SharedPreferences sharedPreferences;
     @Override
@@ -60,8 +66,17 @@ public class SignIn extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         logins = FirebaseDatabase.getInstance().getReference().child("Users");
+                        actlog = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
+
                         String username = user.getText().toString();
                         String password = pass.getText().toString();
+
+                        // for activity log data
+
+                        String currentDate = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault()).format(new Date());
+                        String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+
+                        String actLOG = "User " + username + " logs in. -" + currentDate + "-" + currentTime;
                         if(TextUtils.isEmpty(username) && TextUtils.isEmpty(password)){
                             Toast.makeText(SignIn.this, "Please fill the forms", Toast.LENGTH_SHORT).show();
                         }else{
@@ -76,6 +91,8 @@ public class SignIn extends AppCompatActivity {
                                                     intent = new Intent(SignIn.this, dashboardnabago.class);
 
                                                     startActivity(intent);
+
+                                                    actlog.push().setValue(actLOG);
 
                                                 }
 

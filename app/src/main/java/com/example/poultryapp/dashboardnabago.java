@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class dashboardnabago extends AppCompatActivity {
     TextView humidityValue, tempValue, carbonValue;
-    Switch lightSwitch, fanSwitch, pumpSwitch,feedSwitch;
+//    Switch lightSwitch, fanSwitch, pumpSwitch,feedSwitch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState);
@@ -28,10 +28,10 @@ public class dashboardnabago extends AppCompatActivity {
         humidityValue = findViewById(R.id.humidityPercent);
         tempValue = findViewById(R.id.temperaturePercent);
         carbonValue = findViewById(R.id.airQualityPercent);
-        lightSwitch = findViewById(R.id.lightSwitch);
-        fanSwitch = findViewById(R.id.fanSwitch);
-        pumpSwitch = findViewById(R.id.pumpSwitch);
-        feedSwitch = findViewById(R.id.feedSwitch);
+//        lightSwitch = findViewById(R.id.lightSwitch);
+//        fanSwitch = findViewById(R.id.fanSwitch);
+//        pumpSwitch = findViewById(R.id.pumpSwitch);
+//        feedSwitch = findViewById(R.id.feedSwitch);
         ImageView bur;
 
         bur = findViewById(R.id.burger);
@@ -50,7 +50,7 @@ public class dashboardnabago extends AppCompatActivity {
         );
         displayData();
         systemSwitch();
-        startActivation();
+//        startActivation();
 
     }
         DatabaseReference value;
@@ -88,10 +88,10 @@ public class dashboardnabago extends AppCompatActivity {
                             int water = Integer.parseInt(String.valueOf(snapshot.child("WATER").getValue()));
                             int feed = Integer.parseInt(String.valueOf(snapshot.child("FEED").getValue()));
                             int light = Integer.parseInt(String.valueOf(snapshot.child("LIGHT").getValue()));
-                            fanSwitch.setChecked(fan==1?true:false);
-                            lightSwitch.setChecked(light==1?true:false);
-                            pumpSwitch.setChecked(water==1?true:false);
-                            feedSwitch.setChecked(feed==1?true:false);
+//                            fanSwitch.setChecked(fan==1?true:false);
+//                            lightSwitch.setChecked(light==1?true:false);
+//                            pumpSwitch.setChecked(water==1?true:false);
+//                            feedSwitch.setChecked(feed==1?true:false);
                         }
 
                         @Override
@@ -104,41 +104,41 @@ public class dashboardnabago extends AppCompatActivity {
     DatabaseReference statusRef;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-    private void startActivation(){
-        statusRef = database.getReference("Status");
-        lightSwitch.setOnCheckedChangeListener(
-                new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        statusRef.child("LIGHT").setValue(isChecked ? 1 : 0);
-                    }
-                }
-        );
-        pumpSwitch.setOnCheckedChangeListener(
-                new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        statusRef.child("WATER").setValue(isChecked ? 1 : 0);
-                    }
-                }
-        );
-        fanSwitch.setOnCheckedChangeListener(
-                new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        statusRef.child("FAN").setValue(isChecked ? 1 : 0);
-                    }
-                }
-        );
-        feedSwitch.setOnCheckedChangeListener(
-                new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        statusRef.child("FEED").setValue(isChecked ? 1 : 0);
-                    }
-                }
-        );
-    }
+//    private void startActivation(){
+//        statusRef = database.getReference("Status");
+//        lightSwitch.setOnCheckedChangeListener(
+//                new CompoundButton.OnCheckedChangeListener() {
+//                    @Override
+//                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                        statusRef.child("LIGHT").setValue(isChecked ? 1 : 0);
+//                    }
+//                }
+//        );
+//        pumpSwitch.setOnCheckedChangeListener(
+//                new CompoundButton.OnCheckedChangeListener() {
+//                    @Override
+//                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                        statusRef.child("WATER").setValue(isChecked ? 1 : 0);
+//                    }
+//                }
+//        );
+//        fanSwitch.setOnCheckedChangeListener(
+//                new CompoundButton.OnCheckedChangeListener() {
+//                    @Override
+//                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                        statusRef.child("FAN").setValue(isChecked ? 1 : 0);
+//                    }
+//                }
+//        );
+//        feedSwitch.setOnCheckedChangeListener(
+//                new CompoundButton.OnCheckedChangeListener() {
+//                    @Override
+//                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                        statusRef.child("FEED").setValue(isChecked ? 1 : 0);
+//                    }
+//                }
+//        );
+//    }
 
 
 
