@@ -127,6 +127,7 @@ public class AccountDetails extends AppCompatActivity {
                                             editor.putString("lName",String.valueOf(lname.getText()));
                                             editor.apply();
                                             isMatch=false;
+                                            new ActivityLogs().addLog("edited the account details");
 
                                         }
 

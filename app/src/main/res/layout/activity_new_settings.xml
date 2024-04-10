@@ -127,6 +127,7 @@ good health of the broilers."
         android:layout_height="wrap_content"
         android:text="Temperature °C"
         android:textSize="15dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="@+id/textView5"
@@ -224,6 +225,21 @@ good health of the broilers."
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
+
+    <EditText
+        android:id="@+id/airtext"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/newwhitesmall"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/pink"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
     <ImageView
         android:id="@+id/pink"
         android:layout_width="150dp"
@@ -236,11 +252,18 @@ good health of the broilers."
         app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
     <ImageView
+        android:id="@+id/imageView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/airdot"/>
+        android:src="@drawable/airdot"
+        app:layout_constraintBottom_toBottomOf="@+id/pink"
+        app:layout_constraintEnd_toEndOf="@+id/pink"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/pink" />
 
     <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Air Quality"
@@ -249,10 +272,9 @@ good health of the broilers."
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/pink"
         app:layout_constraintEnd_toEndOf="@+id/pink"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.30"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/pink"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintTop_toTopOf="@+id/pink" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -264,6 +286,20 @@ good health of the broilers."
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/fantext"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/newwhitesmall"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <ImageView
         android:id="@+id/imageView14"
@@ -277,6 +313,31 @@ good health of the broilers."
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fandot"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="@+id/imageView14"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fan"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="@+id/imageView14"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+
+    <ImageView
         android:id="@+id/imageView5"
         android:layout_width="370dp"
         android:layout_height="45dp"
@@ -286,6 +347,21 @@ good health of the broilers."
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <EditText
+        android:id="@+id/lighttext"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/newwhitesmall"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
 
     <ImageView
         android:id="@+id/imageView15"
@@ -299,6 +375,31 @@ good health of the broilers."
         app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
     <ImageView
+        android:id="@+id/imageView99"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lightdot"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView15" />
+
+    <TextView
+        android:id="@+id/textView611"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Light Bulb"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/pink"
+        app:layout_constraintHorizontal_bias="0.30"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView15" />
+
+    <ImageView
         android:id="@+id/imageView6"
         android:layout_width="370dp"
         android:layout_height="45dp"
@@ -308,6 +409,20 @@ good health of the broilers."
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <EditText
+        android:id="@+id/watertext"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/newwhitesmall"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/imageView16"
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
     <ImageView
         android:id="@+id/imageView16"
@@ -322,6 +437,31 @@ good health of the broilers."
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
+        android:id="@+id/imageView999"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/waterdot"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+        app:layout_constraintEnd_toEndOf="@+id/imageView16"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/imageView16"
+        app:layout_constraintTop_toTopOf="@+id/imageView16" />
+
+    <TextView
+        android:id="@+id/textView6111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Water Pump"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+        app:layout_constraintEnd_toEndOf="@+id/imageView16"
+        app:layout_constraintHorizontal_bias="0.30"
+        app:layout_constraintStart_toStartOf="@+id/imageView16"
+        app:layout_constraintTop_toTopOf="@+id/imageView16" />
+
+    <ImageView
         android:id="@+id/imageView7"
         android:layout_width="370dp"
         android:layout_height="45dp"
@@ -332,7 +472,22 @@ good health of the broilers."
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
+    <EditText
+        android:id="@+id/servotext"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/newwhitesmall"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toEndOf="@+id/servooo"
+        app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
     <ImageView
+        android:id="@+id/servooo"
         android:layout_width="150dp"
         android:layout_height="45dp"
         android:background="@drawable/newservo2"
@@ -342,6 +497,48 @@ good health of the broilers."
         app:layout_constraintStart_toStartOf="@+id/imageView7"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView9999"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/servodot"
+        app:layout_constraintBottom_toBottomOf="@+id/servooo"
+        app:layout_constraintEnd_toEndOf="@+id/servooo"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/servooo"
+        app:layout_constraintTop_toTopOf="@+id/servooo" />
+
+    <TextView
+        android:id="@+id/textView61111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Servo Open"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/servooo"
+        app:layout_constraintEnd_toEndOf="@+id/servooo"
+        app:layout_constraintHorizontal_bias="0.30"
+        app:layout_constraintStart_toStartOf="@+id/servooo"
+        app:layout_constraintTop_toTopOf="@+id/servooo" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveChanges"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="71dp"
+        android:text="SAVE CHANGES"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonbg"
+        android:backgroundTint="#0df99f"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
 
 
 

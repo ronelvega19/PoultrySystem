@@ -82,7 +82,7 @@ public class ProfileSettings extends AppCompatActivity {
                         editor.clear();
                         editor.apply();
                         startActivity(new Intent(ProfileSettings.this,SignIn.class));
-
+                                    new ActivityLogs().addLog("signed out");
                     }
                 }
         );
