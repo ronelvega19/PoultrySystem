@@ -21,11 +21,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class newSettings extends AppCompatActivity {
+public class   newSettings extends AppCompatActivity {
 
 
     EditText min, max, air, fan, light, water, servo;
-    ConstraintLayout newLayout;
+
     Button save;
     ImageView backk, a3;
     DatabaseReference check;
@@ -49,7 +49,7 @@ public class newSettings extends AppCompatActivity {
         save = findViewById(R.id.saveChanges);
         backk = findViewById(R.id.back3);
 
-        newLayout = findViewById(R.id.newLayout);
+
 
         a1 = findViewById(R.id.textView);
         a2 = findViewById(R.id.textView2);
@@ -64,6 +64,7 @@ public class newSettings extends AppCompatActivity {
         });
 
         display();
+//        checkdata();
 
         switchh.setOnCheckedChangeListener(
 
@@ -89,6 +90,8 @@ public class newSettings extends AppCompatActivity {
                                                 fan.setFocusable(false);
                                                 light.setClickable(false);
                                                 light.setFocusable(false); }
+
+
                                             if (isChecked) {
                                                 int checkYes = 1;
                                                 userRef2.child("isAutomatic").setValue(checkYes);
@@ -102,6 +105,7 @@ public class newSettings extends AppCompatActivity {
                                                 fan.setFocusable(true);
                                                 light.setClickable(true);
                                                 light.setFocusable(true);
+
                                             }
                                         }
                                     }
@@ -127,7 +131,47 @@ public class newSettings extends AppCompatActivity {
 
     DatabaseReference rd;
     FirebaseAuth userData;
-
+//    private void checkdata(){
+//        DatabaseReference userRef2 = FirebaseDatabase.getInstance().getReference().child("Settings");
+//        userRef2.addValueEventListener(
+//                new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                        int ch = snapshot.child("isAutomatic").getValue(Integer.class);
+//                        if(ch==1){
+//                            min.setClickable(true);
+//                            min.setFocusable(true);
+//                            max.setClickable(true);
+//                            max.setFocusable(true);
+//                            air.setClickable(true);
+//                            air.setFocusable(true);
+//                            fan.setClickable(true);
+//                            fan.setFocusable(true);
+//                            light.setClickable(true);
+//                            light.setFocusable(true);
+//                        }else{
+//                            min.setClickable(false);
+//                            min.setFocusable(false);
+//                            max.setClickable(false);
+//                            max.setFocusable(false);
+//                            air.setClickable(false);
+//                            air.setFocusable(false);
+//                            fan.setClickable(false);
+//                            fan.setFocusable(false);
+//                            light.setClickable(false);
+//                            light.setFocusable(false);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                }
+//        );
+//
+//
+//    }
     private void display() {
 
 //        check = FirebaseDatabase.getInstance().getReference().child("Settings");

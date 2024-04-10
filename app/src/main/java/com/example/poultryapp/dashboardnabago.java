@@ -44,6 +44,7 @@ public class dashboardnabago extends AppCompatActivity {
         date = findViewById(R.id.dates);
 
         bur = findViewById(R.id.burger);
+
         pic = findViewById(R.id.teamid);
 
 
