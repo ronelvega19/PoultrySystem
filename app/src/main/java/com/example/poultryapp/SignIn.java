@@ -38,7 +38,7 @@ public class SignIn extends AppCompatActivity {
     FirebaseAuth users;
     DatabaseReference logins;
 
-    DatabaseReference actlog;
+
     FirebaseAuth mAuth;
     Intent intent;
     SharedPreferences sharedPreferences;
@@ -66,17 +66,11 @@ public class SignIn extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         logins = FirebaseDatabase.getInstance().getReference().child("Users");
-                        actlog = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
 
                         String username = user.getText().toString();
                         String password = pass.getText().toString();
 
-                        // for activity log data
 
-                        String currentDate = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault()).format(new Date());
-                        String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
-
-                        String actLOG = "User " + username + " logs in. -" + currentDate + "-" + currentTime;
                         if(TextUtils.isEmpty(username) && TextUtils.isEmpty(password)){
                             Toast.makeText(SignIn.this, "Please fill the forms", Toast.LENGTH_SHORT).show();
                         }else{
@@ -92,8 +86,7 @@ public class SignIn extends AppCompatActivity {
 
                                                     startActivity(intent);
 
-                                                    actlog.push().setValue(actLOG);
-
+                                                    new ActivityLogs().addLog("Sign In");
                                                 }
 
                                             }else{

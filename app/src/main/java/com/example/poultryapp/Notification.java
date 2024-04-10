@@ -14,9 +14,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -42,10 +42,11 @@ public class Notification extends AppCompatActivity {
 
     MyAdapter adapter;
 
+
     RecyclerView rv;
     ArrayList<Logs> list;
     int i=0;
-    ImageView print;
+    ImageView print, back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +56,22 @@ public class Notification extends AppCompatActivity {
         rv = findViewById(R.id.rc);
         print = findViewById(R.id.printbtn);
         showLogs();
+
+        back = findViewById(R.id.backnotif);
+
+        back.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(Notification.this, ProfileSettings.class));
+                        new ActivityLogs().addLog("logs in");
+                    }
+                }
+        );
+
+
+
+
 
 
         print.setOnClickListener(

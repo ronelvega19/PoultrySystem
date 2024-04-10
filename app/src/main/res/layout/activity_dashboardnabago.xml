@@ -43,7 +43,9 @@
 
         >
 
-        <TextView
+        <TextClock
+            tools:targetApi="jelly_bean_mr1"
+            android:format12Hour="hh:mm:ss a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="11:40 PM"
@@ -56,6 +58,7 @@
             />
 
         <TextView
+            android:id="@+id/dates"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/timeTV"
@@ -356,7 +359,7 @@
 
 
             <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/pumpSwitch"
+                android:id="@+id/lightSwitchs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/lightOnOff"
@@ -416,6 +419,7 @@
 
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/fanSwitchs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/fanOnOff"
@@ -470,6 +474,7 @@
 
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/pumpSwitchs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/pumpOnOff"
@@ -520,7 +525,7 @@
 
 
             <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/feedSwitch"
+                android:id="@+id/feedSwitchs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/feedingOnOff"
