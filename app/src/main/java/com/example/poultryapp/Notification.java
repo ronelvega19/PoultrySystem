@@ -64,7 +64,7 @@ public class Notification extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(Notification.this, ProfileSettings.class));
-                        new ActivityLogs().addLog("logs in");
+
                     }
                 }
         );
@@ -78,7 +78,7 @@ public class Notification extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        per();
+
 //                        permission();
                     }
                 }
@@ -86,97 +86,8 @@ public class Notification extends AppCompatActivity {
     }
     DatabaseReference ref;
 
-    public void savepdf(){
 
-        PdfDocument pdfDoc = null;
-        DatabaseReference data;
-        try {
-            String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
-            SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm:ss");
-            String cdate1 = sdf1.format(new Date());
-            pdfDoc = new PdfDocument(new PdfWriter(path+cdate1));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        Document doc = new Document(pdfDoc);
-        Paragraph t = new Paragraph("Poultry Management System").setTextAlignment(TextAlignment.CENTER).setFontSize(16);
-        doc.add(t);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String cdate = sdf.format(new Date());
-        Paragraph dates = new Paragraph("Generated on:"+cdate).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setMarginTop(10);
-        doc.add(dates);
-        data = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
-        Table table = new Table(3);
-        table.addHeaderCell("No");
-        table.addHeaderCell("Logs");
-        table.addHeaderCell("Date");
 
-        data.addValueEventListener(
-                new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for(DataSnapshot snap: snapshot.getChildren()){
-                            String data = String.valueOf(snap.getValue());
-                            String value[] = data.split("-");
-                            i= i+1;
-                            table.addCell(new Cell().add(new Paragraph(String.valueOf(i))));
-                            table.addCell(new Cell().add(new Paragraph(value[0])));
-                            table.addCell(new Cell().add(new Paragraph(value[1]+" - "+value[2])));
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                }
-        );
-
-        doc.add(table);
-        doc.close();
-        Toast.makeText(this, "Save Pdf Successfully!", Toast.LENGTH_SHORT).show();
-
-    }
-    private static final int WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 100;
-public  void per(){
-
-// Check if the WRITE_EXTERNAL_STORAGE permission is granted
-    if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            == PackageManager.PERMISSION_GRANTED) {
-        // Permission already granted, perform necessary actions
-        performActions();
-    } else {
-        // Request the WRITE_EXTERNAL_STORAGE permission
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE);
-    }
-}
-
-    // Handle the permission request result
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted, perform necessary actions
-                performActions();
-            } else {
-                // Permission denied, handle accordingly
-                handlePermissionDenied();
-            }
-        }
-    }
-
-    // Perform necessary actions when the permission is granted
-    private void performActions() {
-        // TODO: Implement your code here
-        savepdf();
-    }
-
-    // Handle the scenario when the permission is denied
-    private void handlePermissionDenied() {
-        // TODO: Implement your code here
-    }
 
     public void showLogs(){
         ref = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
@@ -205,7 +116,9 @@ public  void per(){
 
 
 
-
+//    private void permission(){
+//      if(Build.VERSION.SDK_INT>=Build.VERSION_CODES)
+//    }
 
 
 

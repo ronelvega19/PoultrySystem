@@ -9,19 +9,463 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="600dp"
-        android:layout_marginTop="150dp"
+        android:layout_height="750dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/teamgreenbg"
         android:layout_centerHorizontal="true"
         >
+        <ImageView
+            android:id="@+id/back4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/back"
+            android:layout_marginTop="40dp"
+            />
 
         <ImageView
+            android:id="@+id/team"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/logoteam"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="570dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/yespo"
+        android:layout_centerHorizontal="true"
+        >
+
+        <TextView
+            android:id="@+id/executiveID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Executives"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/CEOpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            >
+            <TextView
+                android:id="@+id/CEOid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CEO"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_marginLeft="50dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Jester Salen"
+                android:layout_below="@+id/CEOid"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/VICECEOpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/CEOpanel"
+            android:layout_marginLeft="35dp"
+            >
+            <TextView
+                android:id="@+id/VICECEOid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VICE CEO"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_marginLeft="50dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Russel Salen"
+                android:layout_below="@+id/VICECEOid"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/CDDOpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/CEOpanel"
+            >
+            <TextView
+                android:id="@+id/CDDOid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CDDO"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_marginLeft="50dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bejay Franz Acunin"
+                android:layout_below="@+id/CDDOid"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ASSTCDDOpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/VICECEOpanel"
+            android:layout_toRightOf="@+id/CDDOpanel"
+            android:layout_marginLeft="27dp"
+            >
+            <TextView
+                android:id="@+id/ASSTCDDOid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ASST. CDDO"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_marginLeft="50dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ihceal Jay Abando"
+                android:layout_below="@+id/ASSTCDDOid"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/CRDOpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/CDDOpanel"
+            >
+            <TextView
+                android:id="@+id/CRDOid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CRDO"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_marginLeft="50dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nicole Pajares"
+                android:layout_below="@+id/CRDOid"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ASSTCRDOpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ASSTCDDOpanel"
+            android:layout_toRightOf="@+id/CRDOpanel"
+            android:layout_marginLeft="55dp"
+            >
+            <TextView
+                android:id="@+id/ASSTCRDOid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ASST. CRDO"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_marginLeft="50dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avegail Alipante"
+                android:layout_below="@+id/ASSTCRDOid"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/membersID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Members"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_below="@id/CRDOpanel"
+            />
+
+        <RelativeLayout
+            android:id="@+id/EdselPanganibanPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/membersID"
+            android:layout_marginTop="15dp"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edsel Panganiban"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RonelVegaPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/membersID"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/EdselPanganibanPanel"
+
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ronel Vega"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/JoshuaPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/EdselPanganibanPanel"
+            android:layout_marginTop="30dp"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Joshua Magtangob"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/MacrinPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/RonelVegaPanel"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="21dp"
+            android:layout_toRightOf="@id/JoshuaPanel"
+
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Macrin Abando"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/DonPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/JoshuaPanel"
+            android:layout_marginTop="30dp"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don Lornel Valencia"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/PaulinePanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MacrinPanel"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="17dp"
+            android:layout_toRightOf="@id/DonPanel"
+
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pauline Joy Ibasco"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/JoaquinPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/DonPanel"
+            android:layout_marginTop="30dp"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Joaquin Cuenca"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/JanEdcelPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/PaulinePanel"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="35dp"
+            android:layout_toRightOf="@id/JoaquinPanel"
+
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jan Edcel Tesorero"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/LloydPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/JoaquinPanel"
+            android:layout_marginTop="30dp"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lloyd Ilan"
+                android:layout_marginTop="2dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="50dp"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
 
     </RelativeLayout>
 

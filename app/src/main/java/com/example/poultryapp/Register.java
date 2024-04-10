@@ -73,11 +73,11 @@ public class Register extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sharedPref.edit();
 
 
-                                Intent intent = new Intent(Register.this,Terms_and_Conditions.class);
+                                Intent intent = new Intent(Register.this,EmailVerification.class);
                                 String username = reguser.getText().toString();
                                 String pass = regconfirmpass.getText().toString();
-                                String fNames = fName.getText().toString();
-                                String lNames = lName.getText().toString();
+                                String fNames = "";
+                                String lNames = "";
                                 editor.putString("username",username);
                                 editor.putString("password",pass);
                                 editor.putString("fName",fNames);
