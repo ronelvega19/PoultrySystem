@@ -21,13 +21,16 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(login.this,Register.class));
+                new ActivityLogs().addLog("logs in");
             }
         });
         loginBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(login.this,SignIn.class));
+                new ActivityLogs().addLog("logs in");
             }
+
         });
     }
 }

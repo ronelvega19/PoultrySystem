@@ -46,6 +46,7 @@ public class ProfileSettings extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(ProfileSettings.this,Settings.class));
+
                     }
                 }
         );
@@ -54,6 +55,7 @@ public class ProfileSettings extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(ProfileSettings.this, changepassword.class));
+
                     }
                 }
         );
@@ -65,6 +67,7 @@ public class ProfileSettings extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(ProfileSettings.this, dashboardnabago.class));
+
                     }
                 }
         );
@@ -79,6 +82,7 @@ public class ProfileSettings extends AppCompatActivity {
                         editor.clear();
                         editor.apply();
                         startActivity(new Intent(ProfileSettings.this,SignIn.class));
+
                     }
                 }
         );
@@ -88,6 +92,7 @@ public class ProfileSettings extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(ProfileSettings.this, Notification.class));
+
                     }
                 }
         );
