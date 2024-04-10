@@ -45,7 +45,7 @@ public class ProfileSettings extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(ProfileSettings.this,Settings.class));
+                        startActivity(new Intent(ProfileSettings.this,newSettings.class));
 
                     }
                 }

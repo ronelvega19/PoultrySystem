@@ -92,7 +92,6 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-
         switchh.setOnCheckedChangeListener(
 
                 new CompoundButton.OnCheckedChangeListener() {
