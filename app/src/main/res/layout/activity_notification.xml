@@ -47,15 +47,56 @@
 
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/notificationPanel"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+       >
+
+        <EditText
+            android:id="@+id/searchbar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="Search"/>
+
+        <EditText
+            android:id="@+id/searchfromdate"
+            android:layout_width="0dp"
+            android:focusable="false"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintStart_toEndOf="@+id/searchbar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="From Date"
+            />
+        <EditText
+            android:id="@+id/searchtodate"
+            android:layout_width="0dp"
+            android:focusable="false"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/searchfromdate"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="To Date"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/constraintLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true" />
+        android:layout_marginStart="0dp"
+         />
 
     <!--    END NOTIFICATION  -->
 

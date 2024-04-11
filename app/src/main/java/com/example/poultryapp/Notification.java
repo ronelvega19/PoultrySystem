@@ -1,6 +1,8 @@
 package com.example.poultryapp;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -11,8 +13,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -55,26 +62,29 @@ import java.io.OutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.MalformedURLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class Notification extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback{
 
     MyAdapter adapter;
 
-
+    private DatePickerDialog datePickerDialogStart,datePickerDialogEnd;
     RecyclerView rv;
     ArrayList<Logs> list;
     ArrayList<String> array;
     int i=0;
     private static final int REQUEST_CODE_WRITE_EXTERNAL_STORAGE = 101;
 
-
+    EditText searchbar, searchDate,searchtodate;
 
     ImageView print, back;
+    DatabaseReference searchData,searchDateData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,9 +95,10 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
         rv = findViewById(R.id.rc);
         print = findViewById(R.id.printbtn);
         showLogs();
-
+        searchDate = findViewById(R.id.searchfromdate);
+        searchtodate = findViewById(R.id.searchtodate);
         back = findViewById(R.id.backnotif);
-
+        searchbar = findViewById(R.id.searchbar);
         back.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -98,6 +109,53 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
                 }
         );
 
+        searchbar.addTextChangedListener(
+                new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        if(!s.toString().isEmpty()){
+                            searchData = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
+                            array.clear();
+                            list.clear();
+                            searchData.addValueEventListener(
+                                    new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            for (DataSnapshot snap : snapshot.getChildren()) {
+                                                String data = String.valueOf(snap.getValue());
+                                                String value[] = data.split("-");
+                                                if(value[0].trim().toLowerCase().contains(s.toString().trim().toLowerCase())){
+                                                    array.add(data);
+                                                    list.add(new Logs(value[1], value[2], value[0]));
+                                                    rv.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+                                                    adapter = new MyAdapter(list);
+                                                    rv.setAdapter(adapter);
+                                                }
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    }
+                            );
+                        }else{
+                            showLogs();
+                        }
+                    }
+                }
+        );
 
 
 
@@ -118,33 +176,166 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
                 }
         );
 
+        initDatePicker();
+        searchDate.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        openDateStart();
+                        searchTroughDate();
+                    }
+                }
+        );
+        searchtodate.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        openDateEnd();
+                        searchTroughDate();
+                    }
+                }
+        );
+
+    }
+
+    private  void initDatePicker(){
+        initDatePickerStart();
+        initDatePickerEnd();
+    }
+
+    List<Date> allDates = new ArrayList<>();
+    private void searchTroughDate(){
+        if(!TextUtils.isEmpty(searchDate.getText()) && !TextUtils.isEmpty(searchtodate.getText())){
+            String fromDate = searchDate.getText().toString();
+            String toDate = searchtodate.getText().toString();
+            Toast.makeText(this, "ForDate", Toast.LENGTH_SHORT).show();
+            searchDateData = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            array.clear();
+            list.clear();
+            searchDateData.addValueEventListener(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for(DataSnapshot snap: snapshot.getChildren()){
+                                String data = String.valueOf(snap.getValue());
+
+                                String date[] = String.valueOf(snap.getValue()).split("-");
+                               try {
+                                   if (dateFormat.parse(date[1]).after(dateFormat.parse(fromDate)) && dateFormat.parse(date[1]).before(dateFormat.parse(toDate))) {
+                                       array.add(data);
+                                       list.add(new Logs(date[1], date[2], date[0]));
+                                       rv.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+                                       adapter = new MyAdapter(list);
+                                       rv.setAdapter(adapter);
+                                   }
+                               }catch(Exception e){
+
+                               }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    }
+            );
+
+
+        }else{
+            showLogs();
+        }
+    }
+
+    public Date convertStringToDate(String dateString, String dateFormat) {
+        SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);
+        try {
+            Date date = formatter.parse(dateString);
+            return date;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    private void initDatePickerStart(){
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month+1;
+                String date = makeDateString(dayOfMonth,month,year);
+                searchDate.setText(date);
+            }
+        };
+
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        int style = AlertDialog.THEME_HOLO_LIGHT;
+        datePickerDialogStart = new DatePickerDialog(this,style,dateSetListener,year,month,day);
+
+    }
+
+    private void initDatePickerEnd(){
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month+1;
+                String date = makeDateString(dayOfMonth,month,year);
+                searchtodate.setText(date);
+            }
+        };
+
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        int style = AlertDialog.THEME_HOLO_LIGHT;
+
+        datePickerDialogEnd = new DatePickerDialog(this,style,dateSetListener,year,month,day);
+    }
+
+    private String makeDateString(int day,int month, int year){
+        return year+"/"+(month<10?"0"+month:month)+"/"+day;
+    }
+
+
+    public void openDateStart( ){
+        datePickerDialogStart.show();
+    }
+    public void openDateEnd( ){
+        datePickerDialogEnd.show();
     }
     DatabaseReference ref;
     public int CODE = 101;
     public void showLogs(){
-        ref = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
-        ref.addValueEventListener(
-                new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for(DataSnapshot snap: snapshot.getChildren()){
-                            String data = String.valueOf(snap.getValue());
-                            Log.d("wwww", String.valueOf(snap.getValue()));
-                            String value[] = data.split("-");
-                            array.add(data);
-                            list.add(new Logs(value[1],value[2],value[0]));
-                            rv.setLayoutManager(new LinearLayoutManager(getBaseContext()));
-                            adapter = new MyAdapter(list);
-                            rv.setAdapter(adapter);
+        array.clear();
+        list.clear();
+            ref = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
+            ref.addValueEventListener(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot snap : snapshot.getChildren()) {
+                                String data = String.valueOf(snap.getValue());
+                                Log.d("wwww", String.valueOf(snap.getValue()));
+                                String value[] = data.split("-");
+                                array.add(data);
+                                list.add(new Logs(value[1], value[2], value[0]));
+                                rv.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+                                adapter = new MyAdapter(list);
+                                rv.setAdapter(adapter);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
                         }
                     }
+            );
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                }
-        );
     }
 
 
@@ -329,7 +520,7 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
             // Close the document
             document.close();
         }
-
+        array.clear();
         Toast.makeText(this, "PDF SAVED SUCCESSFULLY!", Toast.LENGTH_SHORT).show();
     }
     private byte[] drawableToBytes(Drawable drawable) {
