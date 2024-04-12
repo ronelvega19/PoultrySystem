@@ -18,10 +18,12 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -66,6 +68,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -77,14 +81,18 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
     private DatePickerDialog datePickerDialogStart,datePickerDialogEnd;
     RecyclerView rv;
     ArrayList<Logs> list;
-    ArrayList<String> array;
+    ArrayList<String> array,mySort;
     int i=0;
     private static final int REQUEST_CODE_WRITE_EXTERNAL_STORAGE = 101;
 
     EditText searchbar, searchDate,searchtodate;
 
-    ImageView print, back;
+    ImageView print, back,arrowImage;
     DatabaseReference searchData,searchDateData;
+    ToggleButton sort;
+    // Convert the string to a Date object
+    Date datez = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,9 +104,11 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
         print = findViewById(R.id.printbtn);
         showLogs();
         searchDate = findViewById(R.id.searchfromdate);
-        searchtodate = findViewById(R.id.searchtodate);
+
         back = findViewById(R.id.backnotif);
         searchbar = findViewById(R.id.searchbar);
+        sort = findViewById(R.id.arrowImage);
+        mySort = new ArrayList<>();
         back.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -127,6 +137,8 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
                             searchData = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
                             array.clear();
                             list.clear();
+
+
                             searchData.addValueEventListener(
                                     new ValueEventListener() {
                                         @Override
@@ -182,56 +194,105 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
                     @Override
                     public void onClick(View v) {
                         openDateStart();
-                        searchTroughDate();
-                    }
-                }
-        );
-        searchtodate.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        openDateEnd();
-                        searchTroughDate();
+
                     }
                 }
         );
 
+        sorter();
     }
 
     private  void initDatePicker(){
         initDatePickerStart();
         initDatePickerEnd();
     }
+    DatabaseReference sorters;
+    private void sorter(){
 
-    List<Date> allDates = new ArrayList<>();
-    private void searchTroughDate(){
-        if(!TextUtils.isEmpty(searchDate.getText()) && !TextUtils.isEmpty(searchtodate.getText())){
-            String fromDate = searchDate.getText().toString();
-            String toDate = searchtodate.getText().toString();
-            Toast.makeText(this, "ForDate", Toast.LENGTH_SHORT).show();
+        sort.setOnCheckedChangeListener(
+                new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        mySort.clear();
+                        list.clear();
+                        array.clear();
+                        sorters = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
+                        sorters.addValueEventListener(
+                                new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        for (DataSnapshot snap : snapshot.getChildren()) {
+                                            String data = String.valueOf(snap.getValue());
+                                            Log.d("wwww", String.valueOf(snap.getValue()));
+                                            String value[] = data.split("-");
+                                            mySort.add(data);
+
+
+                                        }
+                                                                if(isChecked){
+
+                                        Collections.reverse(mySort);
+                                for(String datas : mySort){
+                                    array.add(datas);
+                                    Log.d("Reversed", datas);
+                                    String val[] = datas.split("-");
+                                    list.add(new Logs(val[1], val[2], val[0]));
+                                    rv.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+                                    adapter = new MyAdapter(list);
+                                    rv.setAdapter(adapter);
+                                }
+                        }else{
+                                                                    mySort.clear();
+                                                                    list.clear();
+                                                                    array.clear();
+                                                                    showLogs();
+                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                }
+                        );
+
+
+
+                    }
+                }
+        );
+    }
+
+
+
+    private void searchTroughDate(String dates){
+             String fromDate = searchDate.getText().toString();
+        if(!TextUtils.isEmpty(fromDate)) {
+
             searchDateData = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             array.clear();
             list.clear();
+
             searchDateData.addValueEventListener(
                     new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            for(DataSnapshot snap: snapshot.getChildren()){
+                            for (DataSnapshot snap : snapshot.getChildren()) {
                                 String data = String.valueOf(snap.getValue());
 
                                 String date[] = String.valueOf(snap.getValue()).split("-");
-                               try {
-                                   if (dateFormat.parse(date[1]).after(dateFormat.parse(fromDate)) && dateFormat.parse(date[1]).before(dateFormat.parse(toDate))) {
-                                       array.add(data);
-                                       list.add(new Logs(date[1], date[2], date[0]));
-                                       rv.setLayoutManager(new LinearLayoutManager(getBaseContext()));
-                                       adapter = new MyAdapter(list);
-                                       rv.setAdapter(adapter);
-                                   }
-                               }catch(Exception e){
+                                Log.d("MyDATE", date[1]);
+                                try {
+                                    if (fromDate.equals(date[1])) {
+                                        array.add(data);
+                                        list.add(new Logs(date[1], date[2], date[0]));
+                                        rv.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+                                        adapter = new MyAdapter(list);
+                                        rv.setAdapter(adapter);
+                                    }
+                                } catch (Exception e) {
 
-                               }
+                                }
                             }
                         }
 
@@ -241,11 +302,11 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
                         }
                     }
             );
-
-
         }else{
             showLogs();
         }
+
+
     }
 
     public Date convertStringToDate(String dateString, String dateFormat) {
@@ -265,6 +326,7 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
                 month = month+1;
                 String date = makeDateString(dayOfMonth,month,year);
                 searchDate.setText(date);
+                searchTroughDate(date);
             }
         };
 
@@ -284,6 +346,7 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
                 month = month+1;
                 String date = makeDateString(dayOfMonth,month,year);
                 searchtodate.setText(date);
+
             }
         };
 
@@ -312,6 +375,7 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
     public void showLogs(){
         array.clear();
         list.clear();
+
             ref = FirebaseDatabase.getInstance().getReference().child("ActivityLog");
             ref.addValueEventListener(
                     new ValueEventListener() {
@@ -459,7 +523,14 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
             title.setAlignment(Element.ALIGN_CENTER);
             title.setSpacingAfter(20); // Set spacing after the title (in points)
 
-            Paragraph subtitle = new Paragraph("Activity Log Report", titleFont1);
+            Paragraph subtitle = null;
+            if(searchDate.getText().equals("")){
+                subtitle = new Paragraph("Activity Log Report", titleFont1);
+            }else{
+                subtitle = new Paragraph("Activity Log Report as of " +searchDate.getText().toString(), titleFont1);
+
+            }
+
             subtitle.setAlignment(Element.ALIGN_CENTER);
             subtitle.setSpacingAfter(30); // Set spacing after the title (in points)
 
@@ -521,6 +592,7 @@ public class Notification extends AppCompatActivity implements ActivityCompat.On
             document.close();
         }
         array.clear();
+        new ActivityLogs().addLog("printed a activity report");
         Toast.makeText(this, "PDF SAVED SUCCESSFULLY!", Toast.LENGTH_SHORT).show();
     }
     private byte[] drawableToBytes(Drawable drawable) {
