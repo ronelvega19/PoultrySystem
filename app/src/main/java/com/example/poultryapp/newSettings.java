@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -49,8 +50,6 @@ public class   newSettings extends AppCompatActivity {
         save = findViewById(R.id.saveChanges);
         backk = findViewById(R.id.back3);
 
-
-
         a1 = findViewById(R.id.textView);
         a2 = findViewById(R.id.textView2);
         a3 = findViewById(R.id.imageView);
@@ -64,66 +63,87 @@ public class   newSettings extends AppCompatActivity {
         });
 
         display();
+//
+//        if (switchh.isChecked()) {
+//            //int checkYes = 1;
+//            min.setClickable(true);
+//            min.setFocusable(true);
+//            max.setClickable(true);
+//            max.setFocusable(true);
+//            air.setClickable(true);
+//            air.setFocusable(true);
+//            fan.setClickable(true);
+//            fan.setFocusable(true);
+//            light.setClickable(true);
+//            light.setFocusable(true);
+//        }
+//        else{
+//            min.setClickable(false);
+//            min.setFocusable(false);
+//            max.setClickable(false);
+//            max.setFocusable(false);
+//            air.setClickable(false);
+//            air.setFocusable(false);
+//            fan.setClickable(false);
+//            fan.setFocusable(false);
+//            light.setClickable(false);
+//            light.setFocusable(false);
+//        }
 //        checkdata();
 
-        switchh.setOnCheckedChangeListener(
-
-                new CompoundButton.OnCheckedChangeListener() {
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        DatabaseReference userRef2 = FirebaseDatabase.getInstance().getReference().child("Settings");
-                        check = FirebaseDatabase.getInstance().getReference().child("Settings");
-                        userRef2.addListenerForSingleValueEvent(
-                                new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        for (DataSnapshot snap : snapshot.getChildren()) {
-                                            if (!isChecked) {
-                                                int checkNo = 0;
-                                                userRef2.child("isAutomatic").setValue(checkNo);
-                                                min.setClickable(false);
-                                                min.setFocusable(false);
-                                                max.setClickable(false);
-                                                max.setFocusable(false);
-                                                air.setClickable(false);
-                                                air.setFocusable(false);
-                                                fan.setClickable(false);
-                                                fan.setFocusable(false);
-                                                light.setClickable(false);
-                                                light.setFocusable(false); }
-
-
-                                            if (isChecked) {
-                                                int checkYes = 1;
-                                                userRef2.child("isAutomatic").setValue(checkYes);
-                                                min.setClickable(true);
-                                                min.setFocusable(true);
-                                                max.setClickable(true);
-                                                max.setFocusable(true);
-                                                air.setClickable(true);
-                                                air.setFocusable(true);
-                                                fan.setClickable(true);
-                                                fan.setFocusable(true);
-                                                light.setClickable(true);
-                                                light.setFocusable(true);
-
-                                            }
-                                        }
-                                    }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
-
-                                    }
-                                }
-                        );
-
-                        //here
-
+        DatabaseReference userRef3 = FirebaseDatabase.getInstance().getReference().child("Settings");
+        userRef3.addValueEventListener(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            switchh.setChecked(snapshot.child("isAutomatic").getValue(Integer.class)==1?true:false);
+                        if(snapshot.child("isAutomatic").getValue(Integer.class)==1){
+                            min.setEnabled(true);
+                            max.setEnabled(true);
+                            air.setEnabled(true);
+                            fan.setEnabled(true);
+                            light.setEnabled(true);
+                        }else{
+                            min.setEnabled(false);
+                            max.setEnabled(false);
+                            air.setEnabled(false);
+                            fan.setEnabled(false);
+                            light.setEnabled(false);
+                        }
                     }
 
-                }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
+                    }
+                }
         );
+        switchh.setOnCheckedChangeListener(
+                new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        DatabaseReference userRef2 = FirebaseDatabase.getInstance().getReference().child("Settings");
+
+                        if(isChecked){
+                            userRef2.child("isAutomatic").setValue(1);
+                            min.setEnabled(true);
+                            max.setEnabled(true);
+                            air.setEnabled(true);
+                            fan.setEnabled(true);
+                            light.setEnabled(true);
+                        }else{
+                            userRef2.child("isAutomatic").setValue(0);
+                            min.setEnabled(false);
+                            max.setEnabled(false);
+                            air.setEnabled(false);
+                            fan.setEnabled(false);
+                            light.setEnabled(false);
+                        }
+                    }
+                }
+        );
+
+
 
     }
 
@@ -131,48 +151,51 @@ public class   newSettings extends AppCompatActivity {
 
     DatabaseReference rd;
     FirebaseAuth userData;
-//    private void checkdata(){
-//        DatabaseReference userRef2 = FirebaseDatabase.getInstance().getReference().child("Settings");
-//        userRef2.addValueEventListener(
-//                new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                        int ch = snapshot.child("isAutomatic").getValue(Integer.class);
-//                        if(ch==1){
-//                            min.setClickable(true);
-//                            min.setFocusable(true);
-//                            max.setClickable(true);
-//                            max.setFocusable(true);
-//                            air.setClickable(true);
-//                            air.setFocusable(true);
-//                            fan.setClickable(true);
-//                            fan.setFocusable(true);
-//                            light.setClickable(true);
-//                            light.setFocusable(true);
-//                        }else{
-//                            min.setClickable(false);
-//                            min.setFocusable(false);
-//                            max.setClickable(false);
-//                            max.setFocusable(false);
-//                            air.setClickable(false);
-//                            air.setFocusable(false);
-//                            fan.setClickable(false);
-//                            fan.setFocusable(false);
-//                            light.setClickable(false);
-//                            light.setFocusable(false);
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                    }
-//                }
-//        );
-//
-//
-//    }
+
+    private void checkdata(){
+        DatabaseReference userRef2 = FirebaseDatabase.getInstance().getReference().child("Settings");
+        userRef2.addValueEventListener(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        int ch = snapshot.child("isAutomatic").getValue(Integer.class);
+                        if(ch==1){
+                            min.setClickable(true);
+                            min.setFocusable(true);
+                            max.setClickable(true);
+                            max.setFocusable(true);
+                            air.setClickable(true);
+                            air.setFocusable(true);
+                            fan.setClickable(true);
+                            fan.setFocusable(true);
+                            light.setClickable(true);
+                            light.setFocusable(true);
+                        }else{
+                            min.setClickable(false);
+                            min.setFocusable(false);
+                            max.setClickable(false);
+                            max.setFocusable(false);
+                            air.setClickable(false);
+                            air.setFocusable(false);
+                            fan.setClickable(false);
+                            fan.setFocusable(false);
+                            light.setClickable(false);
+                            light.setFocusable(false);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                }
+        );
+
+
+    }
     private void display() {
+
+        //checkdata();
 
 //        check = FirebaseDatabase.getInstance().getReference().child("Settings");
 //        String th = (String.valueOf(check.child("isAutomatic")));
@@ -228,6 +251,7 @@ public class   newSettings extends AppCompatActivity {
         );
 
         save.setOnClickListener(
+
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -253,6 +277,8 @@ public class   newSettings extends AppCompatActivity {
                                             userRef.child("Light").child("Time").setValue(light1);
                                             userRef.child("Water").child("Time").setValue(water1);
                                             userRef.child("Servo").child("Time").setValue(servo1);
+                                            Toast.makeText(getApplicationContext(), "Changes saved!", Toast.LENGTH_SHORT).show();
+
                                         }
                                     }
 
@@ -266,6 +292,7 @@ public class   newSettings extends AppCompatActivity {
 
 
                     }
+
                 }
         );
 

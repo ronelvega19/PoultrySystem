@@ -84,7 +84,7 @@
         <ToggleButton
             android:id="@+id/arrowImage"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_toRightOf="@id/searchfromdate"
             android:background="@drawable/rect"
             android:layout_marginLeft="5dp"

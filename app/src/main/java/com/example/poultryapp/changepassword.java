@@ -115,7 +115,7 @@ passwordf();
                                                                                             userRef.child(id).child("password").setValue(String.valueOf(confirmPass.getText()));
                                                                                             isMatch=false;
                                                                                             new ActivityLogs().addLog("change the account password");
-                                                                                            Toast.makeText(getApplicationContext(), "Password updated successfully", Toast.LENGTH_SHORT).show();
+                                                                                            Toast.makeText(getApplicationContext(), "Password updated successfully!", Toast.LENGTH_SHORT).show();
                                                                                         }
 
                                                                                     }

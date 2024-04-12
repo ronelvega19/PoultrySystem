@@ -128,6 +128,7 @@ public class AccountDetails extends AppCompatActivity {
                                             editor.apply();
                                             isMatch=false;
                                             new ActivityLogs().addLog("edited the account details");
+                                            Toast.makeText(AccountDetails.this, "Changes saved!", Toast.LENGTH_SHORT).show();
 
                                         }
 

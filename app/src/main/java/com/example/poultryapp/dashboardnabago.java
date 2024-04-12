@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -27,7 +30,8 @@ import java.util.Locale;
 
 public class dashboardnabago extends AppCompatActivity {
 
-    ImageView pic, bur,notif;
+    ImageView pic, bur, popupBTN;
+    Dialog mdialog;
     TextView humidityValue, tempValue, carbonValue,date;
     SwitchCompat lightSwitch, fanSwitch, pumpSwitch,feedSwitch;
     @Override
@@ -43,20 +47,9 @@ public class dashboardnabago extends AppCompatActivity {
         feedSwitch = findViewById(R.id.feedSwitchs);
         date = findViewById(R.id.dates);
 
-        notif = findViewById(R.id.iconnn);
-        notif.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        startActivity(new Intent(dashboardnabago.this, Notification.class));
-
-                    }
-                }
-        );
-
         bur = findViewById(R.id.burger);
 
-        pic = findViewById(R.id.teamid);
+        pic = findViewById(R.id.iconnn);
 
 
         pic.setOnClickListener(
@@ -185,6 +178,26 @@ public class dashboardnabago extends AppCompatActivity {
                     }
                 }
         );
+
+
+        popupBTN = findViewById(R.id.popupBTN);
+        mdialog = new Dialog(this);
+
+        popupBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mdialog.setContentView(R.layout.popupjolly);
+
+                mdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                mdialog.show();
+
+            }
+        });
+
+
+
     }
 
 
